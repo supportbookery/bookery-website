@@ -716,6 +716,7 @@ footer small { color: var(--muted); }
       if (!res.ok) throw new Error('server');
       form.classList.add('sent');
       document.getElementById('signup-done').hidden = false;
+      location.assign('testen/?danke');
     } catch (e) {
       fail(e.message === 'limit'
         ? 'Gerade kamen sehr viele Anfragen. Versuch es später noch einmal oder <a href="' + mailto(addr) + '">schreib mir direkt</a>.'
