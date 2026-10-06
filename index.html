@@ -143,7 +143,7 @@ h2 em, h1 em { font-style: italic; color: var(--accent); }
 .gallery { display: flex; gap: 28px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 12px max(20px, calc((100vw - 1120px) / 2 + 20px)) 36px;
   scrollbar-width: none; -webkit-overflow-scrolling: touch; }
 .gallery::-webkit-scrollbar { display: none; }
-.shot { flex: none; width: clamp(210px, 22vw, 250px); scroll-snap-align: center; display: grid; gap: 16px; margin: 0; }
+.shot { flex: none; width: clamp(210px, 22vw, 250px); scroll-snap-align: center; display: grid; align-content: start; gap: 16px; margin: 0; }
 .shot .phone { position: relative; width: 100%; box-shadow: 0 0 0 1.5px #3a3a3c inset, 0 28px 50px -24px rgb(0 0 0 / .45); transition: transform .3s ease; }
 .shot:hover .phone { transform: translateY(-6px); }
 .shot figcaption { text-align: center; }
