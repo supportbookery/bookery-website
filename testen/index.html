@@ -32,6 +32,8 @@ header { display: flex; flex-direction: column; align-items: center; gap: 12px; 
 h1 { font: 400 40px/1.1 var(--serif); margin: 4px 0 0; }
 .lead { font: italic 18px/1.4 var(--serif); color: var(--accent); margin: 0; text-wrap: balance; }
 
+.intro { margin: 0; color: var(--ink); font-size: 16px; }
+.intro b { font-weight: 600; }
 .label { font: 600 12px/1 var(--sans); text-transform: uppercase; letter-spacing: .2em; color: var(--muted); margin: 0 0 10px 4px; }
 .card { background: var(--card); border: 1px solid var(--border); border-radius: 20px; padding: 6px 18px; }
 ol, ul { list-style: none; margin: 0; padding: 0; }
@@ -65,33 +67,71 @@ footer p { font-size: 13px; }
   </header>
 
   <section>
-    <p class="label">Installieren</p>
+    <p class="intro">bookery gibt es noch nicht im App Store. Zum Testen bekommst du die App über <b>TestFlight</b> – das ist eine kostenlose App von Apple, mit der man Apps vor der Veröffentlichung ausprobieren kann. Einmal einrichten dauert etwa fünf Minuten, danach läuft alles von allein.</p>
+  </section>
+
+  <section>
+    <p class="label">So bekommst du bookery</p>
     <ol class="card">
       <li><span class="num">1</span><div>
-        <h2>TestFlight laden</h2>
-        <p>Die kostenlose App von Apple für Testversionen. <a href="https://apps.apple.com/app/testflight/id899247664">Im App Store öffnen</a></p>
+        <h2>TestFlight auf dem iPhone installieren</h2>
+        <p>Öffne den App Store auf deinem iPhone, suche nach <q>TestFlight</q> und lade die App. Sie ist von Apple, kostenlos und ohne Werbung. <a href="https://apps.apple.com/app/testflight/id899247664">TestFlight im App Store öffnen</a></p>
       </div></li>
       <li><span class="num">2</span><div>
-        <h2>Einladung öffnen</h2>
-        <p>Öffne meine Einladung (Mail oder Link) auf dem iPhone und tippe auf <q>Annehmen</q> oder <q>Testen beginnen</q>.</p>
+        <h2>Auf meine Einladungs-Mail warten</h2>
+        <p>Du bekommst eine Mail von Apple mit dem Betreff <q>bookery testen</q> oder ähnlich. Das kann ein paar Tage dauern. Schau auch im Spam-Ordner nach.</p>
       </div></li>
       <li><span class="num">3</span><div>
-        <h2>Installieren</h2>
-        <p>In TestFlight bei bookery auf <q>Installieren</q>. Danach liegt bookery ganz normal auf deinem Home-Bildschirm.</p>
+        <h2>Die Mail auf dem iPhone öffnen</h2>
+        <p>Das ist wichtig: Die Einladung funktioniert nur auf dem iPhone, nicht am Computer. Tippe in der Mail auf den Knopf <q>Jetzt testen</q> (englisch <q>View in TestFlight</q>). TestFlight öffnet sich dann von selbst.</p>
+      </div></li>
+      <li><span class="num">4</span><div>
+        <h2>Annehmen und installieren</h2>
+        <p>In TestFlight einmal auf <q>Annehmen</q> tippen, dann auf <q>Installieren</q>. Danach liegt bookery ganz normal auf deinem Home-Bildschirm und du kannst sie wie jede andere App öffnen.</p>
       </div></li>
     </ol>
   </section>
 
   <section>
-    <p class="label">Danach</p>
+    <p class="label">Gut zu wissen</p>
     <ul class="card">
       <li><span class="dot" aria-hidden="true">↻</span><div>
         <h2>Neue Versionen</h2>
-        <p>TestFlight meldet sich, wenn es ein Update gibt. Tippe auf <q>Aktualisieren</q>. Deine Bücher bleiben erhalten, und bookery zeigt dir, was neu ist.</p>
+        <p>Wenn es eine neue Fassung gibt, meldet sich TestFlight. Öffne TestFlight und tippe bei bookery auf <q>Aktualisieren</q>. Deine Bücher bleiben dabei erhalten, und bookery zeigt dir beim Start, was sich geändert hat.</p>
       </div></li>
       <li><span class="dot" aria-hidden="true">✎</span><div>
         <h2>Feedback geben</h2>
-        <p>Etwas gefällt dir oder klemmt? Auf der Startseite oben auf <q>Feedback</q> tippen und kurz schreiben. Jede Rückmeldung hilft.</p>
+        <p>Etwas gefällt dir, fehlt oder klemmt? Tippe in bookery auf der Startseite oben auf <q>Feedback</q> und schreib mir kurz. Auch ein einzelner Satz hilft mir weiter.</p>
+      </div></li>
+      <li><span class="dot" aria-hidden="true">€</span><div>
+        <h2>Es kostet nichts</h2>
+        <p>Weder TestFlight noch bookery kosten Geld. Es gibt kein Abo, keine Käufe in der App und kein Konto, das du anlegen musst.</p>
+      </div></li>
+      <li><span class="dot" aria-hidden="true">✕</span><div>
+        <h2>Aufhören ist jederzeit möglich</h2>
+        <p>Du kannst bookery einfach löschen – damit bist du raus und musst niemandem Bescheid sagen. Nach dem Testzeitraum stellt TestFlight die App ohnehin von selbst ab.</p>
+      </div></li>
+    </ul>
+  </section>
+
+  <section>
+    <p class="label">Wenn etwas klemmt</p>
+    <ul class="card">
+      <li><span class="dot" aria-hidden="true">?</span><div>
+        <h2>Es kommt keine Mail</h2>
+        <p>Sieh im Spam-Ordner nach. Kommt nach ein paar Tagen nichts an, schreib mir – vielleicht hat sich in der Adresse ein Buchstabe verlaufen.</p>
+      </div></li>
+      <li><span class="dot" aria-hidden="true">?</span><div>
+        <h2>Der Knopf in der Mail tut nichts</h2>
+        <p>Dann fehlt meist TestFlight. Installiere es zuerst (Schritt 1) und tippe den Knopf danach noch einmal an.</p>
+      </div></li>
+      <li><span class="dot" aria-hidden="true">?</span><div>
+        <h2>Ich habe die Mail am Computer geöffnet</h2>
+        <p>Kein Problem: Öffne dieselbe Mail noch einmal auf dem iPhone. Die Einladung bleibt gültig.</p>
+      </div></li>
+      <li><span class="dot" aria-hidden="true">?</span><div>
+        <h2>TestFlight fragt nach einem Code</h2>
+        <p>Den brauchst du nicht. Geh zurück in die Mail und tippe dort auf den Knopf <q>Jetzt testen</q>, dann trägt TestFlight alles selbst ein.</p>
       </div></li>
     </ul>
   </section>
