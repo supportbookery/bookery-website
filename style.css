@@ -1,14 +1,103 @@
-:root { --ink:#2b2a26; --muted:#6b675e; --bg:#faf7f0; --accent:#3f5f45; }
-@media (prefers-color-scheme: dark) { :root { --ink:#ece8de; --muted:#a8a396; --bg:#1c1b18; --accent:#8fb795; } }
+/* bookery – gemeinsame Gestaltung: Salbei-Papier wie in der App (ThemePalette.sage). */
+:root {
+  --paper: #E6F6E8; --card: #FAFCF6; --border: #D6EDDA; --chip: #E7F6E9;
+  --accent-card: #D2F2DD; --accent-card-border: #CAF0D6;
+  --ink: #283C34; --muted: #7D8379; --accent: #47785B; --on-accent: #FAFCF6;
+  --serif: ui-serif, "New York", "Iowan Old Style", Georgia, serif;
+  --sans: system-ui, -apple-system, "Helvetica Neue", "Segoe UI", sans-serif;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --paper: #16241B; --card: #26382D; --border: #3D5744; --chip: #314434;
+  --accent-card: #223E2A; --accent-card-border: #345B3E;
+  --ink: #FAFBFA; --muted: #BFC4BD; --accent: #AFD0BB; --on-accent: #16241B; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --paper: #16241B; --card: #26382D; --border: #3D5744; --chip: #314434;
+  --accent-card: #223E2A; --accent-card-border: #345B3E;
+  --ink: #FAFBFA; --muted: #BFC4BD; --accent: #AFD0BB; --on-accent: #16241B; color-scheme: dark }
+
 * { box-sizing: border-box; }
-body { margin:0; background:var(--bg); color:var(--ink); font:16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
-main { max-width:720px; margin:0 auto; padding:40px 16px 64px; }
-h1 { font-size:1.9rem; line-height:1.2; margin:0 0 4px; }
-h2 { font-size:1.15rem; margin:2em 0 .4em; }
-p, li { color:var(--ink); }
-.meta, footer { color:var(--muted); font-size:.9rem; }
-a { color:var(--accent); }
-footer { margin-top:3em; border-top:1px solid color-mix(in srgb, var(--muted) 30%, transparent); padding-top:1em; }
-h3 { font-size:1rem; margin:1.4em 0 .2em; }
-.brand { display:inline-block; margin-bottom:20px; }
-.brand img { display:block; width:64px; height:64px; border-radius:22.5%; box-shadow:0 2px 10px rgba(0,0,0,.12); }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--paper); color: var(--ink); font: 16px/1.6 var(--sans);
+  padding: 40px 16px 56px; }
+main { max-width: 680px; margin: 0 auto; }
+
+a { color: var(--accent); font-weight: 600; text-underline-offset: 3px; }
+a:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
+
+/* Rechtstexte: Datenschutz und Impressum */
+.brand { display: inline-block; margin-bottom: 20px; }
+.brand img { display: block; width: 64px; height: 64px; border-radius: 22.5%; box-shadow: 0 4px 14px rgb(0 0 0 / .18); }
+h1 { font: 400 2.25rem/1.15 var(--serif); margin: 0 0 6px; }
+h2 { font: 600 1.1rem/1.35 var(--sans); margin: 2em 0 .4em; }
+h3 { font: 600 1rem/1.35 var(--sans); margin: 1.4em 0 .2em; }
+.meta { color: var(--muted); font-size: .9rem; margin-top: 0; }
+ul { padding-left: 1.3em; }
+li { margin: .3em 0; }
+
+/* Fußzeile auf allen Seiten */
+.site-footer { margin-top: 56px; padding-top: 20px; border-top: 1px solid var(--border);
+  display: flex; flex-direction: column; align-items: center; gap: 8px; text-align: center; }
+.site-footer nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 4px 18px; }
+.site-footer nav a { font-size: .95rem; }
+.site-footer nav a[aria-current="page"] { color: var(--ink); text-decoration: none; }
+.site-footer p { margin: 0; color: var(--muted); font-size: .85rem; }
+
+/* ---------- Startseite ---------- */
+.home main { max-width: 560px; display: flex; flex-direction: column; gap: 36px; }
+
+.hero { display: flex; flex-direction: column; align-items: center; gap: 14px; text-align: center; padding-top: 8px; }
+.hero .logo { width: 96px; height: 96px; border-radius: 22.5%; box-shadow: 0 10px 28px rgb(0 0 0 / .22); }
+.hero h1 { font-size: 3rem; margin: 6px 0 0; }
+.lead { font: italic 1.25rem/1.4 var(--serif); color: var(--accent); margin: 0; text-wrap: balance; }
+.intro { color: var(--muted); margin: 0; max-width: 30em; text-wrap: pretty; }
+
+.cta { display: flex; flex-direction: column; align-items: center; gap: 10px; margin-top: 8px; width: 100%; }
+.button { display: inline-flex; align-items: center; justify-content: center; gap: 8px; width: 100%; max-width: 320px;
+  min-height: 52px; padding: 0 24px; border-radius: 16px; background: var(--accent); color: var(--on-accent);
+  font: 600 1.05rem/1 var(--sans); text-decoration: none; box-shadow: 0 6px 18px rgb(71 120 91 / .28);
+  transition: transform .15s ease, box-shadow .15s ease; }
+.button:hover { transform: translateY(-1px); box-shadow: 0 8px 22px rgb(71 120 91 / .34); }
+.button:active { transform: scale(.98); }
+.button svg { width: 18px; height: 18px; }
+.cta small { color: var(--muted); font-size: .85rem; }
+
+.label { font: 600 12px/1 var(--sans); text-transform: uppercase; letter-spacing: .2em; color: var(--muted); margin: 0 0 10px 4px; }
+.card { background: var(--card); border: 1px solid var(--border); border-radius: 20px; padding: 6px 18px; }
+
+.promises { background: var(--accent-card); border: 1px solid var(--accent-card-border); border-radius: 20px;
+  padding: 18px 20px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px 16px;
+  list-style: none; margin: 0; }
+.promises li { display: flex; align-items: center; gap: 10px; margin: 0; font: 1.05rem/1.3 var(--serif); }
+.promises svg { flex: none; width: 22px; height: 22px; color: var(--accent); }
+
+.features { list-style: none; margin: 0; padding: 6px 18px; }
+.features li { display: grid; grid-template-columns: 36px minmax(0, 1fr); gap: 14px; padding: 14px 0; margin: 0; }
+.features li + li { border-top: 1px solid var(--border); }
+.icon { width: 36px; height: 36px; border-radius: 50%; background: var(--chip); color: var(--accent); display: grid; place-items: center; }
+.icon svg { width: 19px; height: 19px; }
+.features h3 { margin: 6px 0 2px; }
+.features p { margin: 0; color: var(--muted); font-size: .95rem; }
+
+.faq { padding: 0 18px; }
+.faq details + details { border-top: 1px solid var(--border); }
+.faq summary { list-style: none; cursor: pointer; padding: 15px 28px 15px 0; position: relative; font-weight: 600; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: ""; position: absolute; right: 4px; top: 50%; width: 8px; height: 8px;
+  border-right: 2px solid var(--muted); border-bottom: 2px solid var(--muted);
+  transform: translateY(-70%) rotate(45deg); transition: transform .2s ease; }
+.faq details[open] summary::after { transform: translateY(-30%) rotate(-135deg); }
+.faq details p { margin: -4px 0 16px; color: var(--muted); font-size: .95rem; }
+
+.contact { text-align: center; padding: 20px 18px; }
+.contact p { margin: 0 0 4px; color: var(--muted); }
+.contact a { font-size: 1.05rem; word-break: break-all; }
+
+@media (max-width: 400px) {
+  .hero h1 { font-size: 2.5rem; }
+  .promises { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .button, .faq summary::after { transition: none; }
+}
+.contact .hint { margin-top: 8px; font-size: .9rem; }
