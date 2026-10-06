@@ -110,9 +110,9 @@
     
         <section id="grundsatz">
           <h2><span class="num">2</span>Grundsatz: Deine Bibliothek bleibt auf deinem iPhone</h2>
-          <p>Bücher, Notizen, Bewertungen, Lesesitzungen, Regal und Treppchen, eigene Fotos, dein Name und dein Profilbild werden ausschließlich lokal auf deinem Gerät gespeichert. Es gibt kein Benutzerkonto und keinen Server von bookery; wir erhalten keine dieser Daten. Gesichert werden sie über dein iCloud- oder Computer-Backup, sofern du das in iOS eingerichtet hast (dafür gelten die Datenschutzbestimmungen von Apple), oder über eine Sicherungsdatei, die du selbst exportierst und ablegst, wo du möchtest.</p>
+          <p>Bücher, Notizen, Bewertungen, Lesesitzungen, Regal und Treppchen, eigene Fotos, dein Name und dein Profilbild werden ausschließlich lokal auf deinem Gerät gespeichert. Es gibt kein Benutzerkonto, und keine dieser Daten landet auf einem Server von bookery; wir erhalten sie nicht. Gesichert werden sie über dein iCloud- oder Computer-Backup, sofern du das in iOS eingerichtet hast (dafür gelten die Datenschutzbestimmungen von Apple), oder über eine Sicherungsdatei, die du selbst exportierst und ablegst, wo du möchtest.</p>
           
-          <p>Für einige Funktionen ruft die App öffentliche Dienste direkt von deinem iPhone aus ab. Dabei erhalten diese Dienste technisch bedingt deine IP-Adresse; bei Open Library, Apple und der Wikimedia Foundation können Daten in die USA übertragen werden. Für die USA besteht ein Angemessenheitsbeschluss der EU-Kommission (EU-US Data Privacy Framework), soweit der Empfänger zertifiziert ist. Welche Daten wann an wen gehen, steht in den folgenden Abschnitten. Wir selbst erhalten dabei nichts.</p>
+          <p>Für einige Funktionen ruft die App öffentliche Dienste direkt von deinem iPhone aus ab. Dabei erhalten diese Dienste technisch bedingt deine IP-Adresse; bei Open Library, Apple, Google und der Wikimedia Foundation können Daten in die USA übertragen werden. Für die USA besteht ein Angemessenheitsbeschluss der EU-Kommission (EU-US Data Privacy Framework), soweit der Empfänger zertifiziert ist. Welche Daten wann an wen gehen, steht in den folgenden Abschnitten. Wir selbst erhalten dabei nichts – mit einer Ausnahme: Für die Suche bei Google Books läuft der Suchbegriff über unseren eigenen Server (Abschnitt 3).</p>
         </section>
     
         <section id="buchsuche">
@@ -121,9 +121,11 @@
           <ul>
           <li>Open Library, betrieben vom Internet Archive, San Francisco, USA (<a href="https://archive.org/about/terms">Datenschutz</a>)</li>
           <li>Deutsche Nationalbibliothek, Leipzig/Frankfurt am Main (<a href="https://www.dnb.de/datenschutz">Datenschutz</a>)</li>
+          <li>K10plus, der gemeinsame Bibliothekskatalog von GBV und SWB, betrieben von der Verbundzentrale des GBV (VZG), Göttingen (<a href="https://www.gbv.de/datenschutz">Datenschutz</a>)</li>
           <li>Apple (iTunes Search API), Apple Distribution International Ltd., Irland, bzw. Apple Inc., USA (<a href="https://www.apple.com/de/legal/privacy/">Datenschutz</a>)</li>
           </ul>
-          <p>Cover werden direkt von diesen Diensten geladen und auf deinem Gerät zwischengespeichert. Fehlt ein Cover im Zwischenspeicher – etwa nach dem Einspielen einer Sicherung oder auf einem neuen Gerät –, lädt die App es beim Start erneut. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO (Bereitstellung der von dir genutzten Funktion).</p>
+          <p>Findet keiner dieser Dienste ein passendes Buch, fragt die App zusätzlich Google Books (Google Ireland Ltd., Irland, bzw. Google LLC, USA; <a href="https://policies.google.com/privacy?hl=de">Datenschutz</a>). Diese Anfrage geht nicht direkt von deinem iPhone an Google, sondern an unseren eigenen Server unter bookery.dustingotte.de (Rechenzentrum der IONOS SE, Montabaur, Deutschland), der sie weiterreicht. Google erhält so nur den Suchbegriff bzw. die ISBN und die Adresse unseres Servers, nicht deine IP-Adresse. Der Server protokolliert keine Zugriffe. Damit dieselbe Suche nicht erneut bei Google landet, speichert er Suchbegriff und Antwort ohne Bezug zu dir zwischen – eine ISBN bis zu 30 Tage, sonstige Suchbegriffe einen Tag. Um Missbrauch zu begrenzen, hält er deine IP-Adresse höchstens 24 Stunden im Arbeitsspeicher. Mit IONOS besteht ein Vertrag zur Auftragsverarbeitung nach Art. 28 DSGVO.</p>
+          <p>Cover werden direkt von diesen Diensten geladen (bei Google Books also auch direkt von Google) und auf deinem Gerät zwischengespeichert. Fehlt ein Cover im Zwischenspeicher – etwa nach dem Einspielen einer Sicherung oder auf einem neuen Gerät –, lädt die App es beim Start erneut. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO (Bereitstellung der von dir genutzten Funktion).</p>
         </section>
     
         <section id="buchinfos">
