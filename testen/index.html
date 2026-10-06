@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>bookery testen</title>
+<meta name="description" content="So installierst du die Testversion von bookery über TestFlight.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="../logo.png" type="image/png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<style>
+* { box-sizing: border-box; }
+/* Layout: eine schmale Spalte wie ein iPhone-Bildschirm, Karten auf Salbei-Papier */
+:root {
+  --paper: #E6F6E8; --card: #FAFCF6; --border: #D6EDDA; --chip: #E7F6E9;
+  --ink: #283C34; --muted: #7D8379; --accent: #47785B; --on-accent: #FAFCF6;
+  --serif: ui-serif, "New York", "Iowan Old Style", Georgia, serif;
+  --sans: system-ui, -apple-system, "Helvetica Neue", sans-serif;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --paper: #16241B; --card: #26382D; --border: #3D5744; --chip: #314434;
+  --ink: #FAFBFA; --muted: #BFC4BD; --accent: #AFD0BB; --on-accent: #16241B; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --paper: #16241B; --card: #26382D; --border: #3D5744; --chip: #314434;
+  --ink: #FAFBFA; --muted: #BFC4BD; --accent: #AFD0BB; --on-accent: #16241B; color-scheme: dark }
+
+body { margin: 0; -webkit-text-size-adjust: 100%; background: var(--paper); color: var(--ink); font: 16px/1.5 var(--sans); padding-inline: 16px; padding-block: 40px 56px; }
+main { max-width: 440px; margin: 0 auto; display: flex; flex-direction: column; gap: 28px; }
+
+header { display: flex; flex-direction: column; align-items: center; gap: 12px; text-align: center; }
+.logo { width: 80px; height: 80px; border-radius: 18px; box-shadow: 0 6px 16px rgb(0 0 0 / .22); }
+h1 { font: 400 40px/1.1 var(--serif); margin: 4px 0 0; }
+.lead { font: italic 18px/1.4 var(--serif); color: var(--accent); margin: 0; text-wrap: balance; }
+
+.label { font: 600 12px/1 var(--sans); text-transform: uppercase; letter-spacing: .2em; color: var(--muted); margin: 0 0 10px 4px; }
+.card { background: var(--card); border: 1px solid var(--border); border-radius: 20px; padding: 6px 18px; }
+ol, ul { list-style: none; margin: 0; padding: 0; }
+li { display: grid; grid-template-columns: 30px 1fr; gap: 14px; padding: 14px 0; }
+li + li { border-top: 1px solid var(--border); }
+li > div { min-width: 0; }
+.num { width: 30px; height: 30px; border-radius: 50%; background: var(--accent); color: var(--on-accent);
+  display: grid; place-items: center; font: 600 15px/1 var(--sans); font-variant-numeric: tabular-nums; }
+.dot { width: 30px; height: 30px; border-radius: 50%; background: var(--chip); color: var(--accent);
+  display: grid; place-items: center; font-size: 15px; }
+h2 { font: 600 16px/1.3 var(--sans); margin: 3px 0 2px; }
+p { margin: 0; color: var(--muted); font-size: 15px; }
+a { color: var(--accent); font-weight: 600; text-underline-offset: 3px; }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
+q { quotes: "„" "“"; color: var(--ink); font-weight: 600; }
+
+footer { text-align: center; display: flex; flex-direction: column; gap: 6px; align-items: center; }
+.rule { width: 36px; height: 3px; border-radius: 2px; background: var(--accent); }
+footer p { font-size: 13px; }
+.mail { user-select: all; color: var(--ink); font-weight: 600; }
+</style>
+</head>
+<body>
+
+<main>
+  <header>
+    <img class="logo" alt="" src="../logo.png" width="80" height="80">
+    <h1>bookery</h1>
+    <p class="lead">Schön, dass du mittestest!</p>
+  </header>
+
+  <section>
+    <p class="label">Installieren</p>
+    <ol class="card">
+      <li><span class="num">1</span><div>
+        <h2>TestFlight laden</h2>
+        <p>Die kostenlose App von Apple für Testversionen. <a href="https://apps.apple.com/app/testflight/id899247664">Im App Store öffnen</a></p>
+      </div></li>
+      <li><span class="num">2</span><div>
+        <h2>Einladung öffnen</h2>
+        <p>Öffne meine Einladung (Mail oder Link) auf dem iPhone und tippe auf <q>Annehmen</q> oder <q>Testen beginnen</q>.</p>
+      </div></li>
+      <li><span class="num">3</span><div>
+        <h2>Installieren</h2>
+        <p>In TestFlight bei bookery auf <q>Installieren</q>. Danach liegt bookery ganz normal auf deinem Home-Bildschirm.</p>
+      </div></li>
+    </ol>
+  </section>
+
+  <section>
+    <p class="label">Danach</p>
+    <ul class="card">
+      <li><span class="dot" aria-hidden="true">↻</span><div>
+        <h2>Neue Versionen</h2>
+        <p>TestFlight meldet sich, wenn es ein Update gibt. Tippe auf <q>Aktualisieren</q>. Deine Bücher bleiben erhalten, und bookery zeigt dir, was neu ist.</p>
+      </div></li>
+      <li><span class="dot" aria-hidden="true">✎</span><div>
+        <h2>Feedback geben</h2>
+        <p>Etwas gefällt dir oder klemmt? Auf der Startseite oben auf <q>Feedback</q> tippen und kurz schreiben. Jede Rückmeldung hilft.</p>
+      </div></li>
+    </ul>
+  </section>
+
+  <footer>
+    <span class="rule"></span>
+    <p>Eine App von dustingotte</p>
+    <p>Fragen? <span class="mail">support.bookery@gmail.com</span></p>
+  </footer>
+</main>
+</body>
+</html>
