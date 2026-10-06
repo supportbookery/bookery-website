@@ -31,6 +31,10 @@ html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; scroll-padding-t
 body { margin: 0; background: var(--paper); color: var(--ink); font: 17px/1.6 var(--sans); overflow-x: hidden;
   transition: background-color .5s ease, color .5s ease; }
 img { max-width: 100%; display: block; }
+/* Nichts darf seitlich überstehen (Telefone, Farbkreise), sonst lässt Safari auf dem iPhone rauszoomen. clip hält die Kopfzeile klebend. */
+html, body { overflow-x: clip; }
+main { overflow-x: clip; }
+html { touch-action: manipulation; }
 a { color: var(--accent); }
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 8px; }
 .wrap { max-width: 1120px; margin: 0 auto; padding: 0 20px; }
