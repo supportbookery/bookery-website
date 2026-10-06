@@ -242,14 +242,8 @@ h2 em, h1 em { font-style: italic; color: var(--accent); }
 .signup-form .note.error { color: #C2453A; }
 @media (prefers-color-scheme: dark) { .field input[aria-invalid="true"] { border-color: #F08A80; } .signup-form .note.error { color: #F08A80; } }
 .hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
-.done { display: grid; grid-template-columns: 48px 1fr; gap: 16px; align-items: start; }
+.done { display: grid; justify-items: start; }
 .done[hidden] { display: none; }
-.done .check { width: 48px; height: 48px; border-radius: 50%; background: var(--accent); color: var(--on-accent); display: grid; place-items: center;
-  animation: pop .5s cubic-bezier(.3,1.6,.5,1); }
-.done .check svg { width: 24px; height: 24px; }
-.done b { font: 400 1.5rem/1.25 var(--serif); }
-.done p { margin: 6px 0 0; color: var(--muted); }
-@keyframes pop { from { transform: scale(.4); opacity: 0; } }
 .signup-form.sent > :not(.done) { display: none; }
 @media (max-width: 820px) { .signup { grid-template-columns: 1fr; } }
 @media (max-width: 560px) { .signup { padding: 26px 18px 18px; border-radius: 28px; } .signup-text { padding: 0 6px; } }
@@ -338,7 +332,6 @@ footer small { color: var(--muted); }
   .pillar p { font-size: .92rem; }
   .signup-text p { font-size: .98rem; }
   .field input { min-height: 50px; font-size: 1rem; }
-  .done b { font-size: 1.3rem; }
   .step { padding: 20px; }
   .step::before { width: 34px; height: 34px; font-size: .95rem; margin-bottom: 12px; }
   .faq summary { font-size: .98rem; padding: 16px 34px 16px 0; }
@@ -564,9 +557,8 @@ footer small { color: var(--muted); }
           <input type="hidden" name="lang" value="de">
           <p class="note" id="signup-note" aria-live="polite">Kein Newsletter, kein Konto. Die Adresse nutze ich nur für die Einladung. <a href="datenschutz.html#testen">Datenschutz</a></p>
           <div class="done" id="signup-done" hidden>
-            <span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg></span>
-            <div><b>Danke, ist angekommen!</b>
-            <p>Sobald ich dich eingetragen habe, schickt Apple dir eine Einladungs-Mail – das kann einen Moment dauern. Öffne sie dann auf dem iPhone. Schritt für Schritt steht alles in der <a href="testen/">Anleitung</a>.</p></div>
+            <a class="button" href="testen/"><span>Zur Anleitung</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
           </div>
         </form>
       </div>
