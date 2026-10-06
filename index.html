@@ -92,9 +92,10 @@ h2 em, h1 em { font-style: italic; color: var(--accent); }
 
 /* Telefone */
 .phones { position: relative; height: clamp(520px, 62vw, 680px); }
-.phone { position: absolute; width: clamp(220px, 26vw, 300px); aspect-ratio: 1320 / 2868; padding: 2.6%; border-radius: 15% / 7%;
+.phone { position: absolute; width: clamp(220px, 26vw, 300px); padding: 2.6%; border-radius: 15% / 7%;
   background: #1c1c1e; box-shadow: 0 0 0 1.5px #3a3a3c inset, 0 40px 80px -20px rgb(0 0 0 / .45), 0 18px 36px -18px rgb(0 0 0 / .35); }
-.phone img { width: 100%; height: 100%; object-fit: cover; border-radius: 12.4% / 5.8%; }
+/* Bild bestimmt die Höhe: so wird der Screenshot nie beschnitten oder vergrößert. */
+.phone img { width: 100%; height: auto; aspect-ratio: 660 / 1434; border-radius: 12.4% / 5.7%; }
 .phone.front { --fx: -28%; left: 50%; top: 0; transform: translateX(var(--fx)) rotate(3deg); z-index: 2; animation: float 7s ease-in-out infinite; }
 .phone.back { --bx: -92%; left: 50%; top: 60px; transform: translateX(var(--bx)) rotate(-7deg) scale(.9); opacity: .96; animation: float2 8s ease-in-out infinite; }
 @keyframes float { 50% { transform: translateX(var(--fx)) rotate(3deg) translateY(-14px); } }
