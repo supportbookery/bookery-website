@@ -2,88 +2,212 @@
 <html lang="de">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Datenschutzerklärung – bookery</title>
+<meta name="description" content="Datenschutzerklärung für die iOS-App bookery und diese Website.">
+<meta name="theme-color" content="#E6F6E8" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#16241B" media="(prefers-color-scheme: dark)">
 <link rel="icon" href="logo.png" type="image/png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="stylesheet" href="style.css">
+<script src="legal.js" defer></script>
 </head>
 <body>
+
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a class="brand" href="./"><img class="app-icon" src="icons/sage.png" alt="" width="34" height="34">bookery</a>
+    <nav class="nav-links" aria-label="Seiten">
+      <a href="./#funktionen">Funktionen</a>
+      <a href="./#farben">Farben</a>
+      <a href="datenschutz.html" aria-current="page">Datenschutz</a>
+      <a href="./#fragen">Fragen</a>
+    </nav>
+    <a class="pill" href="./#testen">Testen</a>
+  </div>
+</header>
+
 <main>
-<a class="brand" href="./"><img src="logo.png" width="64" height="64" alt="bookery-Logo"></a>
-<h1>Datenschutzerklärung</h1>
-<p class="meta">für die iOS-App „bookery“ · Stand: Oktober 2026</p>
 
-<h2>1. Verantwortlicher</h2>
-<p>
-Dustin Götte, Eifelstraße 73, 53498 Bad Breisig, Deutschland<br>
-E-Mail: <a href="mailto:support.bookery@gmail.com">support.bookery@gmail.com</a>
-</p>
+  <section class="page-head">
+    <div class="wrap">
+      <span class="eyebrow">Datenschutz</span>
+      <h1>Deine Bücher <em>gehören dir.</em></h1>
+      <p class="lede">Datenschutzerklärung für die iOS-App „bookery“ und diese Website. Hier steht genau, welche Daten wann wohin gehen – und dass wir selbst so gut wie nichts davon sehen.</p>
+      <ul class="chips"><li>Stand: Oktober 2026</li><li>App und Website</li></ul>
+    </div>
+  </section>
 
-<h2>2. Grundsatz: Deine Bibliothek bleibt auf deinem iPhone</h2>
-<p>Bücher, Notizen, Bewertungen, Lesesitzungen, Regal und Treppchen, eigene Fotos, dein Name und dein Profilbild werden ausschließlich lokal auf deinem Gerät gespeichert. Es gibt kein Benutzerkonto und keinen Server von bookery; wir erhalten keine dieser Daten. Gesichert werden sie über dein iCloud- oder Computer-Backup, sofern du das in iOS eingerichtet hast (dafür gelten die Datenschutzbestimmungen von Apple), oder über eine Sicherungsdatei, die du selbst exportierst und ablegst, wo du möchtest.</p>
+  <div class="wrap">
+    <div class="summary" aria-label="Kurz gesagt">
+      <div>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18h2"/></svg>
+        <b>Nur auf deinem iPhone</b>
+        <p>Deine Bibliothek liegt auf deinem Gerät. bookery hat keinen eigenen Server für deine Daten.</p>
+      </div>
+      <div>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0M3 3l18 18"/></svg>
+        <b>Kein Konto</b>
+        <p>Keine Anmeldung, kein Passwort, keine Profildaten bei uns.</p>
+      </div>
+      <div>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/><path d="M3 3l18 18"/></svg>
+        <b>Kein Tracking</b>
+        <p>Keine Werbung, keine Analyse, keine Cookies – in der App und auf dieser Website.</p>
+      </div>
+    </div>
 
-<p>Für einige Funktionen ruft die App öffentliche Dienste direkt von deinem iPhone aus ab. Dabei erhalten diese Dienste technisch bedingt deine IP-Adresse; bei Open Library, Apple und der Wikimedia Foundation können Daten in die USA übertragen werden. Für die USA besteht ein Angemessenheitsbeschluss der EU-Kommission (EU-US Data Privacy Framework), soweit der Empfänger zertifiziert ist. Welche Daten wann an wen gehen, steht in den folgenden Abschnitten. Wir selbst erhalten dabei nichts.</p>
+    <div class="layout">
+      <nav class="toc" aria-label="Inhalt">
+        <span class="eyebrow">Inhalt</span>
+        <ol>
+          <li><a href="#verantwortlicher">Verantwortlicher</a></li>
+          <li><a href="#grundsatz">Grundsatz</a></li>
+          <li><a href="#buchsuche">Buchsuche und Cover</a></li>
+          <li><a href="#buchinfos">Buchinfos und Reihen</a></li>
+          <li><a href="#empfehlungen">Buchempfehlungen</a></li>
+          <li><a href="#kategorien">Automatische Kategorien</a></li>
+          <li><a href="#bookie">Umzug aus Bookie</a></li>
+          <li><a href="#kamera">Kamera und Fotos</a></li>
+          <li><a href="#feedback">Feedback per E-Mail</a></li>
+          <li><a href="#links">Links zu anderen Websites</a></li>
+          <li><a href="#tracking">Kein Tracking</a></li>
+          <li><a href="#speicherdauer">Speicherdauer und Löschung</a></li>
+          <li><a href="#rechte">Deine Rechte</a></li>
+          <li><a href="#website">Diese Website</a></li>
+          <li><a href="#testen">Anmeldung zum Testen</a></li>
+        </ol>
+      </nav>
+      <details class="toc-mobile">
+        <summary>Inhalt</summary>
+        <ol>
+          <li><a href="#verantwortlicher">Verantwortlicher</a></li>
+          <li><a href="#grundsatz">Grundsatz</a></li>
+          <li><a href="#buchsuche">Buchsuche und Cover</a></li>
+          <li><a href="#buchinfos">Buchinfos und Reihen</a></li>
+          <li><a href="#empfehlungen">Buchempfehlungen</a></li>
+          <li><a href="#kategorien">Automatische Kategorien</a></li>
+          <li><a href="#bookie">Umzug aus Bookie</a></li>
+          <li><a href="#kamera">Kamera und Fotos</a></li>
+          <li><a href="#feedback">Feedback per E-Mail</a></li>
+          <li><a href="#links">Links zu anderen Websites</a></li>
+          <li><a href="#tracking">Kein Tracking</a></li>
+          <li><a href="#speicherdauer">Speicherdauer und Löschung</a></li>
+          <li><a href="#rechte">Deine Rechte</a></li>
+          <li><a href="#website">Diese Website</a></li>
+          <li><a href="#testen">Anmeldung zum Testen</a></li>
+        </ol>
+      </details>
 
-<h2>3. Buchsuche, Strichcode-Scan und Cover</h2>
-<p>Wenn du nach einem Buch suchst oder einen Strichcode scannst, sendet die App den Suchbegriff bzw. die ISBN an folgende Dienste:</p>
-<ul>
-<li>Open Library, betrieben vom Internet Archive, San Francisco, USA (<a href="https://archive.org/about/terms">Datenschutz</a>)</li>
-<li>Deutsche Nationalbibliothek, Leipzig/Frankfurt am Main (<a href="https://www.dnb.de/datenschutz">Datenschutz</a>)</li>
-<li>Apple (iTunes Search API), Apple Distribution International Ltd., Irland, bzw. Apple Inc., USA (<a href="https://www.apple.com/de/legal/privacy/">Datenschutz</a>)</li>
-</ul>
-<p>Cover werden direkt von diesen Diensten geladen und auf deinem Gerät zwischengespeichert. Fehlt ein Cover im Zwischenspeicher – etwa nach dem Einspielen einer Sicherung oder auf einem neuen Gerät –, lädt die App es beim Start erneut. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO (Bereitstellung der von dir genutzten Funktion).</p>
+      <article class="doc">
+        <section id="verantwortlicher">
+          <h2><span class="num">1</span>Verantwortlicher</h2>
+          <p>
+          Dustin Götte, Eifelstraße 73, 53498 Bad Breisig, Deutschland<br>
+          E-Mail: <a href="mailto:support.bookery@gmail.com">support.bookery@gmail.com</a>
+          </p>
+        </section>
+    
+        <section id="grundsatz">
+          <h2><span class="num">2</span>Grundsatz: Deine Bibliothek bleibt auf deinem iPhone</h2>
+          <p>Bücher, Notizen, Bewertungen, Lesesitzungen, Regal und Treppchen, eigene Fotos, dein Name und dein Profilbild werden ausschließlich lokal auf deinem Gerät gespeichert. Es gibt kein Benutzerkonto und keinen Server von bookery; wir erhalten keine dieser Daten. Gesichert werden sie über dein iCloud- oder Computer-Backup, sofern du das in iOS eingerichtet hast (dafür gelten die Datenschutzbestimmungen von Apple), oder über eine Sicherungsdatei, die du selbst exportierst und ablegst, wo du möchtest.</p>
+          
+          <p>Für einige Funktionen ruft die App öffentliche Dienste direkt von deinem iPhone aus ab. Dabei erhalten diese Dienste technisch bedingt deine IP-Adresse; bei Open Library, Apple und der Wikimedia Foundation können Daten in die USA übertragen werden. Für die USA besteht ein Angemessenheitsbeschluss der EU-Kommission (EU-US Data Privacy Framework), soweit der Empfänger zertifiziert ist. Welche Daten wann an wen gehen, steht in den folgenden Abschnitten. Wir selbst erhalten dabei nichts.</p>
+        </section>
+    
+        <section id="buchsuche">
+          <h2><span class="num">3</span>Buchsuche, Strichcode-Scan und Cover</h2>
+          <p>Wenn du nach einem Buch suchst oder einen Strichcode scannst, sendet die App den Suchbegriff bzw. die ISBN an folgende Dienste:</p>
+          <ul>
+          <li>Open Library, betrieben vom Internet Archive, San Francisco, USA (<a href="https://archive.org/about/terms">Datenschutz</a>)</li>
+          <li>Deutsche Nationalbibliothek, Leipzig/Frankfurt am Main (<a href="https://www.dnb.de/datenschutz">Datenschutz</a>)</li>
+          <li>Apple (iTunes Search API), Apple Distribution International Ltd., Irland, bzw. Apple Inc., USA (<a href="https://www.apple.com/de/legal/privacy/">Datenschutz</a>)</li>
+          </ul>
+          <p>Cover werden direkt von diesen Diensten geladen und auf deinem Gerät zwischengespeichert. Fehlt ein Cover im Zwischenspeicher – etwa nach dem Einspielen einer Sicherung oder auf einem neuen Gerät –, lädt die App es beim Start erneut. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO (Bereitstellung der von dir genutzten Funktion).</p>
+        </section>
+    
+        <section id="buchinfos">
+          <h2><span class="num">4</span>Buchinfos und Reihen</h2>
+          <ul>
+          <li><strong>Infos zu Buch und Autor:</strong> Tippst du in einem Buch auf „i“, gehen Titel und Autor an Apple (iTunes Search API) und der Name des Autors an Wikipedia.</li>
+          <li><strong>Reihen:</strong> Nimmst du ein Buch auf oder lässt eine Reihe erkennen, geht der Titel an Wikidata und die ISBN an Open Library, um die Reihe und ihre Bände zu finden.</li>
+          </ul>
+          <p>Wikipedia und Wikidata betreibt die Wikimedia Foundation, San Francisco, USA (<a href="https://foundation.wikimedia.org/wiki/Policy:Privacy_policy/de">Datenschutz</a>). Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO.</p>
+        </section>
+    
+        <section id="empfehlungen">
+          <h2><span class="num">5</span>Buchempfehlungen (freiwillig)</h2>
+          <p>Schaltest du Buchempfehlungen ein (anfangs aus), gehen die Namen deiner meistgelesenen Autoren bzw. die von dir gewählten Genres an Open Library. Deine Bibliothek selbst wird nicht übertragen; welche Bücher dir vorgeschlagen werden, berechnet die App auf deinem iPhone. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO.</p>
+        </section>
+    
+        <section id="kategorien">
+          <h2><span class="num">6</span>Automatische Kategorien (freiwillig)</h2>
+          <p>Wenn du die Funktion „Kategorien automatisch ermitteln“ einschaltest, sendet die App Titel und Autor deiner Bücher im Hintergrund an Apple (iTunes Search API), um sie Kategorien wie „Krimi“ oder „Fantasy“ zuzuordnen. Das geschieht nur mit deiner Einwilligung (Art. 6 Abs. 1 lit. a DSGVO). Die Funktion ist anfangs ausgeschaltet; du kannst die Einwilligung jederzeit in den Einstellungen der App widerrufen. Der Widerruf gilt für die Zukunft.</p>
+        </section>
+    
+        <section id="bookie">
+          <h2><span class="num">7</span>Umzug aus Bookie</h2>
+          <p>Die Exportdatei aus Bookie wird nur auf deinem iPhone gelesen. Lässt du dabei die Buchcover dazusuchen, gehen ISBN bzw. Titel und Autor der übernommenen Bücher an die Dienste der Buchsuche (Abschnitt 3). Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO.</p>
+        </section>
+    
+        <section id="kamera">
+          <h2><span class="num">8</span>Kamera und Fotos</h2>
+          <p>Die Kamera wird nur genutzt, wenn du einen Strichcode scannst oder ein Cover fotografierst, und erst nachdem du den Zugriff in iOS erlaubt hast. Fotos für Cover, Profilbild oder Feedback wählst du selbst aus; die App erhält nur diese und keinen Zugriff auf deine ganze Mediathek. Cover- und Profilfotos bleiben auf deinem Gerät.</p>
+        </section>
+    
+        <section id="feedback">
+          <h2><span class="num">9</span>Feedback per E-Mail</h2>
+          <p>Schickst du aus der App Feedback oder einen Fehlerbericht, öffnet sich deine Mail-App mit einer vorbereiteten Nachricht an <a href="mailto:support.bookery@gmail.com">support.bookery@gmail.com</a>. Sie enthält deinen Text, die von dir gewählten Screenshots und – sofern du es nicht abschaltest – App-Version, iOS-Version und Gerätemodell. Du siehst alles vor dem Senden. Die E-Mail wird über Gmail (Google Ireland Ltd., Irland, bzw. Google LLC, USA; <a href="https://policies.google.com/privacy?hl=de">Datenschutz</a>) empfangen; dabei können Daten in die USA übertragen werden. Wir nutzen sie nur zur Beantwortung und Fehlerbehebung und löschen sie, wenn sie dafür nicht mehr nötig sind. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b und f DSGVO.</p>
+        </section>
+    
+        <section id="links">
+          <h2><span class="num">10</span>Links zu anderen Websites</h2>
+          <p>„Bei Thalia ansehen“ öffnet die Website der Thalia Bücher GmbH, „Weiterlesen“ bei einem Autor die Wikipedia – jeweils in deinem Browser. Erst dann werden Daten an diese Anbieter übertragen; es gelten die <a href="https://www.thalia.de/shop/home/show/datenschutz/">Datenschutzbestimmungen von Thalia</a> bzw. der <a href="https://foundation.wikimedia.org/wiki/Policy:Privacy_policy/de">Wikimedia Foundation</a>.</p>
+        </section>
+    
+        <section id="tracking">
+          <h2><span class="num">11</span>Kein Tracking</h2>
+          <p>bookery enthält keine Werbung, keine Analyse- oder Tracking-Werkzeuge und keine Absturzberichte von Drittanbietern. Dein Leseverhalten wird weder von uns noch von Dritten ausgewertet. Von Apple bereitgestellte Statistiken (App Store Connect) erhalten wir nur in zusammengefasster Form und nur, wenn du der Weitergabe in iOS zugestimmt hast.</p>
+        </section>
+    
+        <section id="speicherdauer">
+          <h2><span class="num">12</span>Speicherdauer und Löschung</h2>
+          <p>Die Daten bleiben auf deinem Gerät, bis du sie löschst. „Alle Daten löschen“ in den Einstellungen der App oder das Löschen der App entfernt sie vollständig vom Gerät (Backups und von dir exportierte Sicherungsdateien ausgenommen).</p>
+        </section>
+    
+        <section id="rechte">
+          <h2><span class="num">13</span>Deine Rechte</h2>
+          <p>Du hast das Recht auf Auskunft (Art. 15 DSGVO), Berichtigung (Art. 16), Löschung (Art. 17), Einschränkung der Verarbeitung (Art. 18), Datenübertragbarkeit (Art. 20), Widerspruch (Art. 21) und Widerruf erteilter Einwilligungen (Art. 7 Abs. 3). Außerdem kannst du dich bei einer Datenschutz-Aufsichtsbehörde beschweren (Art. 77 DSGVO). Da wir selbst keine Daten über dich speichern, kannst du die meisten dieser Rechte direkt in der App ausüben.</p>
+        </section>
+    
+        <section id="website">
+          <h2><span class="num">14</span>Diese Website</h2>
+          <p>Diese Website liegt auf unserem eigenen Server im Rechenzentrum der IONOS SE, Montabaur, Deutschland. Beim Aufruf verarbeitet der Server technisch notwendige Daten, insbesondere deine IP-Adresse, um die Seite auszuliefern. Zugriffe werden nicht protokolliert, es entstehen also keine Server-Logfiles. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (sichere und zuverlässige Bereitstellung dieser Seite). Mit IONOS besteht ein Vertrag zur Auftragsverarbeitung nach Art. 28 DSGVO.</p>
+          <p>Cookies, Analyse- oder Tracking-Werkzeuge werden auf dieser Website nicht eingesetzt. Schriften, Bilder und Skripte liegen auf dieser Website selbst; es werden keine Inhalte von fremden Servern nachgeladen. Wählst du auf der Startseite eine Farbwelt, merkt sich nur dein Browser diese Wahl (lokaler Speicher) und zeigt auch diese Seite und das Impressum darin an; an uns wird nichts übertragen. Du kannst die Wahl jederzeit ändern oder über die Website-Daten deines Browsers löschen.</p>
+        </section>
+    
+        <section id="testen">
+          <h2><span class="num">15</span>Anmeldung zum Testen</h2>
+          <p>Trägst du auf dieser Website deine E-Mail-Adresse ein, um bookery zu testen, wird sie an unseren eigenen Server unter dustingotte.de gesendet (Rechenzentrum der IONOS SE, Montabaur, Deutschland) und von dort per E-Mail an support.bookery@gmail.com weitergeleitet (Gmail, siehe Abschnitt 9; dabei können Daten in die USA übertragen werden). Der Server speichert die Adresse nicht und protokolliert keine Zugriffe; um Missbrauch zu verhindern, hält er Adresse und IP-Adresse höchstens 24 Stunden im Arbeitsspeicher.</p>
+          <p>Wir nutzen die Adresse nur, um dich über TestFlight als Tester einzuladen. Dazu tragen wir sie in App Store Connect ein; die Einladung verschickt Apple (Apple Distribution International Ltd., Irland, bzw. Apple Inc., USA; <a href="https://www.apple.com/de/legal/privacy/">Datenschutz</a>). Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO (deine Anfrage). Die Mail löschen wir, wenn die Einladung erledigt ist; als Tester kannst du dich jederzeit in TestFlight abmelden oder uns schreiben, dann entfernen wir dich.</p>
+        </section>
+      </article>
+    </div>
+  </div>
 
-<h2>4. Buchinfos und Reihen</h2>
-<ul>
-<li><strong>Infos zu Buch und Autor:</strong> Tippst du in einem Buch auf „i“, gehen Titel und Autor an Apple (iTunes Search API) und der Name des Autors an Wikipedia.</li>
-<li><strong>Reihen:</strong> Nimmst du ein Buch auf oder lässt eine Reihe erkennen, geht der Titel an Wikidata und die ISBN an Open Library, um die Reihe und ihre Bände zu finden.</li>
-</ul>
-<p>Wikipedia und Wikidata betreibt die Wikimedia Foundation, San Francisco, USA (<a href="https://foundation.wikimedia.org/wiki/Policy:Privacy_policy/de">Datenschutz</a>). Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO.</p>
-
-<h2>5. Buchempfehlungen (freiwillig)</h2>
-<p>Schaltest du Buchempfehlungen ein (anfangs aus), gehen die Namen deiner meistgelesenen Autoren bzw. die von dir gewählten Genres an Open Library. Deine Bibliothek selbst wird nicht übertragen; welche Bücher dir vorgeschlagen werden, berechnet die App auf deinem iPhone. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO.</p>
-
-<h2>6. Automatische Kategorien (freiwillig)</h2>
-<p>Wenn du die Funktion „Kategorien automatisch ermitteln“ einschaltest, sendet die App Titel und Autor deiner Bücher im Hintergrund an Apple (iTunes Search API), um sie Kategorien wie „Krimi“ oder „Fantasy“ zuzuordnen. Das geschieht nur mit deiner Einwilligung (Art. 6 Abs. 1 lit. a DSGVO). Die Funktion ist anfangs ausgeschaltet; du kannst die Einwilligung jederzeit in den Einstellungen der App widerrufen. Der Widerruf gilt für die Zukunft.</p>
-
-<h2>7. Umzug aus Bookie</h2>
-<p>Die Exportdatei aus Bookie wird nur auf deinem iPhone gelesen. Lässt du dabei die Buchcover dazusuchen, gehen ISBN bzw. Titel und Autor der übernommenen Bücher an die Dienste der Buchsuche (Abschnitt 3). Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO.</p>
-
-<h2>8. Kamera und Fotos</h2>
-<p>Die Kamera wird nur genutzt, wenn du einen Strichcode scannst oder ein Cover fotografierst, und erst nachdem du den Zugriff in iOS erlaubt hast. Fotos für Cover, Profilbild oder Feedback wählst du selbst aus; die App erhält nur diese und keinen Zugriff auf deine ganze Mediathek. Cover- und Profilfotos bleiben auf deinem Gerät.</p>
-
-<h2>9. Feedback per E-Mail</h2>
-<p>Schickst du aus der App Feedback oder einen Fehlerbericht, öffnet sich deine Mail-App mit einer vorbereiteten Nachricht an <a href="mailto:support.bookery@gmail.com">support.bookery@gmail.com</a>. Sie enthält deinen Text, die von dir gewählten Screenshots und – sofern du es nicht abschaltest – App-Version, iOS-Version und Gerätemodell. Du siehst alles vor dem Senden. Die E-Mail wird über Gmail (Google Ireland Ltd., Irland, bzw. Google LLC, USA; <a href="https://policies.google.com/privacy?hl=de">Datenschutz</a>) empfangen; dabei können Daten in die USA übertragen werden. Wir nutzen sie nur zur Beantwortung und Fehlerbehebung und löschen sie, wenn sie dafür nicht mehr nötig sind. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b und f DSGVO.</p>
-
-<h2>10. Links zu anderen Websites</h2>
-<p>„Bei Thalia ansehen“ öffnet die Website der Thalia Bücher GmbH, „Weiterlesen“ bei einem Autor die Wikipedia – jeweils in deinem Browser. Erst dann werden Daten an diese Anbieter übertragen; es gelten die <a href="https://www.thalia.de/shop/home/show/datenschutz/">Datenschutzbestimmungen von Thalia</a> bzw. der <a href="https://foundation.wikimedia.org/wiki/Policy:Privacy_policy/de">Wikimedia Foundation</a>.</p>
-
-<h2>11. Kein Tracking</h2>
-<p>bookery enthält keine Werbung, keine Analyse- oder Tracking-Werkzeuge und keine Absturzberichte von Drittanbietern. Dein Leseverhalten wird weder von uns noch von Dritten ausgewertet. Von Apple bereitgestellte Statistiken (App Store Connect) erhalten wir nur in zusammengefasster Form und nur, wenn du der Weitergabe in iOS zugestimmt hast.</p>
-
-<h2>12. Speicherdauer und Löschung</h2>
-<p>Die Daten bleiben auf deinem Gerät, bis du sie löschst. „Alle Daten löschen“ in den Einstellungen der App oder das Löschen der App entfernt sie vollständig vom Gerät (Backups und von dir exportierte Sicherungsdateien ausgenommen).</p>
-
-<h2>13. Deine Rechte</h2>
-<p>Du hast das Recht auf Auskunft (Art. 15 DSGVO), Berichtigung (Art. 16), Löschung (Art. 17), Einschränkung der Verarbeitung (Art. 18), Datenübertragbarkeit (Art. 20), Widerspruch (Art. 21) und Widerruf erteilter Einwilligungen (Art. 7 Abs. 3). Außerdem kannst du dich bei einer Datenschutz-Aufsichtsbehörde beschweren (Art. 77 DSGVO). Da wir selbst keine Daten über dich speichern, kannst du die meisten dieser Rechte direkt in der App ausüben.</p>
-
-<h2>14. Diese Website</h2>
-<p>Diese Website wird über GitHub Pages bereitgestellt (GitHub B.V., Amsterdam, Niederlande, bzw. GitHub Inc., San Francisco, USA). Beim Aufruf verarbeitet GitHub technisch notwendige Daten, insbesondere deine IP-Adresse, um die Seite auszuliefern und den Dienst abzusichern; dabei können Daten in die USA übertragen werden. GitHub ist unter dem EU-US Data Privacy Framework zertifiziert. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (sichere und zuverlässige Bereitstellung dieser Seite). Näheres im <a href="https://docs.github.com/de/site-policy/privacy-policies/github-general-privacy-statement">Datenschutzhinweis von GitHub</a>. Cookies oder Tracking werden auf dieser Website nicht eingesetzt. Wählst du oben eine Farbwelt, merkt sich nur dein Browser diese Wahl (lokaler Speicher); an uns wird nichts übertragen.</p>
-
-<h2 id="testen">15. Anmeldung zum Testen</h2>
-<p>Trägst du auf dieser Website deine E-Mail-Adresse ein, um bookery zu testen, wird sie an unseren eigenen Server unter dustingotte.de gesendet (Rechenzentrum der IONOS SE, Montabaur, Deutschland) und von dort per E-Mail an support.bookery@gmail.com weitergeleitet (Gmail, siehe Abschnitt 9; dabei können Daten in die USA übertragen werden). Der Server speichert die Adresse nicht und protokolliert keine Zugriffe; um Missbrauch zu verhindern, hält er Adresse und IP-Adresse höchstens 24 Stunden im Arbeitsspeicher.</p>
-<p>Wir nutzen die Adresse nur, um dich über TestFlight als Tester einzuladen. Dazu tragen wir sie in App Store Connect ein; die Einladung verschickt Apple (Apple Distribution International Ltd., Irland, bzw. Apple Inc., USA; <a href="https://www.apple.com/de/legal/privacy/">Datenschutz</a>). Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO (deine Anfrage). Die Mail löschen wir, wenn die Einladung erledigt ist; als Tester kannst du dich jederzeit in TestFlight abmelden oder uns schreiben, dann entfernen wir dich.</p>
-
-<footer class="site-footer">
-  <nav aria-label="Seiten">
-    <a href="./">Start</a>
-    <a href="testen/">Testen</a>
-    <a href="datenschutz.html" aria-current="page">Datenschutz</a>
-    <a href="impressum.html">Impressum</a>
-  </nav>
-  <p>Eine App von dustingotte · © 2026 Dustin Götte</p>
-</footer>
 </main>
+
+<footer>
+  <div class="wrap">
+    <a class="brand" href="./" style="margin-right:0"><img class="app-icon" src="icons/sage.png" alt="" width="34" height="34">bookery</a>
+    <nav aria-label="Rechtliches">
+      <a href="testen/">Anleitung für Tester</a>
+      <a href="datenschutz.html" aria-current="page">Datenschutz</a>
+      <a href="impressum.html">Impressum</a>
+    </nav>
+    <small>Eine App von dustingotte · © 2026 Dustin Götte</small>
+  </div>
+</footer>
+
 </body>
 </html>

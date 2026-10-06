@@ -2,40 +2,76 @@
 <html lang="de">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Impressum – bookery</title>
+<meta name="description" content="Impressum der iOS-App bookery und der Website bookery.dustingotte.de.">
+<meta name="theme-color" content="#E6F6E8" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#16241B" media="(prefers-color-scheme: dark)">
 <link rel="icon" href="logo.png" type="image/png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="stylesheet" href="style.css">
+<script src="legal.js" defer></script>
 </head>
 <body>
+
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a class="brand" href="./"><img class="app-icon" src="icons/sage.png" alt="" width="34" height="34">bookery</a>
+    <nav class="nav-links" aria-label="Seiten">
+      <a href="./#funktionen">Funktionen</a>
+      <a href="./#farben">Farben</a>
+      <a href="datenschutz.html">Datenschutz</a>
+      <a href="./#fragen">Fragen</a>
+    </nav>
+    <a class="pill" href="./#testen">Testen</a>
+  </div>
+</header>
+
 <main>
-<a class="brand" href="./"><img src="logo.png" width="64" height="64" alt="bookery-Logo"></a>
-<h1>Impressum</h1>
-<p class="meta">Angaben gemäß § 5 DDG</p>
 
-<p>
-Dustin Götte<br>
-Eifelstraße 73<br>
-53498 Bad Breisig<br>
-Deutschland
-</p>
+  <section class="page-head">
+    <div class="wrap">
+      <span class="eyebrow">Impressum</span>
+      <h1>Wer hinter <em>bookery</em> steht.</h1>
+      <p class="lede">Angaben gemäß § 5 DDG für die iOS-App „bookery“ und die Website bookery.dustingotte.de.</p>
+    </div>
+  </section>
 
-<h2>Kontakt</h2>
-<p>E-Mail: <a href="mailto:support.bookery@gmail.com">support.bookery@gmail.com</a></p>
+  <div class="wrap">
+    <div class="cards">
+      <div class="card">
+        <h2>Anbieter</h2>
+        <address>Dustin Götte<br>Eifelstraße 73<br>53498 Bad Breisig<br>Deutschland</address>
+      </div>
+      <div class="card accent">
+        <h2>Kontakt</h2>
+        <a class="big" href="mailto:support.bookery@gmail.com">support.bookery@gmail.com</a>
+        <p>Für Fragen, Fehler und Wünsche zu bookery. Ich antworte so schnell ich kann.</p>
+      </div>
+      <div class="card">
+        <h2>Verantwortlich für den Inhalt</h2>
+        <p>nach § 18 Abs. 2 MStV: Dustin Götte, Anschrift wie oben</p>
+      </div>
+      <div class="card">
+        <h2>Geltungsbereich</h2>
+        <p>Dieses Impressum gilt für die App bookery und diese Website. Für meine persönliche Seite dustingotte.de gilt das <a href="https://dustingotte.de/impressum.html">dortige Impressum</a>.</p>
+      </div>
+    </div>
+  </div>
 
-<h2>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2>
-<p>Dustin Götte, Anschrift wie oben</p>
-
-<footer class="site-footer">
-  <nav aria-label="Seiten">
-    <a href="./">Start</a>
-    <a href="testen/">Testen</a>
-    <a href="datenschutz.html">Datenschutz</a>
-    <a href="impressum.html" aria-current="page">Impressum</a>
-  </nav>
-  <p>Eine App von dustingotte · © 2026 Dustin Götte</p>
-</footer>
 </main>
+
+<footer>
+  <div class="wrap">
+    <a class="brand" href="./" style="margin-right:0"><img class="app-icon" src="icons/sage.png" alt="" width="34" height="34">bookery</a>
+    <nav aria-label="Rechtliches">
+      <a href="testen/">Anleitung für Tester</a>
+      <a href="datenschutz.html">Datenschutz</a>
+      <a href="impressum.html" aria-current="page">Impressum</a>
+    </nav>
+    <small>Eine App von dustingotte · © 2026 Dustin Götte</small>
+  </div>
+</footer>
+
 </body>
 </html>
