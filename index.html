@@ -71,8 +71,9 @@ h2 em, h1 em { font-style: italic; color: var(--accent); }
 .hero-text { display: grid; gap: 22px; justify-items: start; }
 .badge { display: inline-flex; align-items: center; gap: 8px; padding: 7px 14px 7px 10px; border-radius: 999px;
   background: var(--card); border: 1px solid var(--border); font-size: .88rem; font-weight: 600; color: var(--ink); }
-.badge i { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 0 var(--accent); animation: ping 2s infinite; }
-@keyframes ping { 0% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--accent) 60%, transparent); } 80%, 100% { box-shadow: 0 0 0 9px transparent; } }
+/* Immer rot, unabhängig von der Farbwelt: soll ins Auge stechen. */
+.badge i { width: 8px; height: 8px; border-radius: 50%; background: #e5342b; box-shadow: 0 0 0 0 #e5342b; animation: ping 2s infinite; }
+@keyframes ping { 0% { box-shadow: 0 0 0 0 rgb(229 52 43 / .6); } 80%, 100% { box-shadow: 0 0 0 9px transparent; } }
 .hero h1 { font-size: clamp(2.6rem, 5.4vw, 4.5rem); line-height: 1.04; }
 @media (max-width: 900px) { .hero h1 { font-size: clamp(2.5rem, 10.5vw, 4.2rem); } }
 .hero .sub { margin: 0; font-size: clamp(1.1rem, 2vw, 1.3rem); color: var(--muted); max-width: 30em; text-wrap: pretty; }
@@ -397,8 +398,8 @@ footer small { color: var(--muted); }
       <div class="phones reveal" style="--d:200ms" aria-hidden="true">
         <div class="phone back"><img src="shots/2-buecherregal.jpg" alt="" width="660" height="1434"></div>
         <div class="phone front"><img src="shots/1-start.jpg" alt="" width="660" height="1434" fetchpriority="high"></div>
-        <div class="sticker one"><span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 15 8.5l7 .8-5.2 4.8 1.4 7L12 17.6 5.8 21l1.4-7L2 9.3l7-.8z"/></svg></span><div><b>Dein Treppchen</b><span>Die drei Lieblingsbücher</span></div></div>
-        <div class="sticker two"><span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2 2M10 2h4"/></svg></span><div><b>67 % gelesen</b><span>Seite 214 von 320</span></div></div>
+        <div class="sticker one"><span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2 2M10 2h4"/></svg></span><div><b>67 % gelesen</b><span>Seite 214 von 320</span></div></div>
+        <div class="sticker two"><span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4v16M8 8v12M12 6v14M16 6l4 14"/></svg></span><div><b>Dein Bücherregal</b><span>11 Bücher im Regal</span></div></div>
       </div>
     </div>
   </section>
