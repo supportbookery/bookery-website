@@ -147,6 +147,8 @@ h2 em, h1 em { font-style: italic; color: var(--accent); }
 .gallery { display: flex; gap: 28px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 12px max(20px, calc((100vw - 1120px) / 2 + 20px)) 36px;
   scrollbar-width: none; -webkit-overflow-scrolling: touch; }
 .gallery::-webkit-scrollbar { display: none; }
+/* Solange die Galerie von selbst wandert, kein Einrasten -- sonst springt sie bei jedem Schritt zurück. */
+.gallery.wandert { scroll-snap-type: none; }
 .shot { flex: none; width: clamp(210px, 22vw, 250px); scroll-snap-align: center; display: grid; align-content: start; gap: 16px; margin: 0; }
 .shot .phone { position: relative; width: 100%; box-shadow: 0 0 0 1.5px #3a3a3c inset, 0 28px 50px -24px rgb(0 0 0 / .45); transition: transform .3s ease; }
 .shot:hover .phone { transform: translateY(-6px); }
@@ -738,9 +740,46 @@ footer small { color: var(--muted); }
   // Galerie: Pfeile blättern um ein Telefon.
   const gallery = document.getElementById('gallery');
   document.querySelectorAll('.gallery-nav button').forEach(b => b.addEventListener('click', () => {
+    selbst();
     const step = gallery.querySelector('.shot').getBoundingClientRect().width + 28;
     gallery.scrollBy({ left: step * Number(b.dataset.dir), behavior: 'smooth' });
   }));
+
+  // Beim Herunterscrollen wandert die Galerie von selbst ein Stück nach rechts --
+  // so sieht man, dass es seitlich weitergeht. Fasst man sie selbst an, hört das auf.
+  let wandert = !matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let jetzt = 0, gesetzt = 0, frame = 0;
+  function selbst() {
+    if (!wandert) return;
+    wandert = false;
+    cancelAnimationFrame(frame);
+    gallery.classList.remove('wandert');
+  }
+  // Selbst angefasst heißt: seitlich bewegt (Wischen, Trackpad, Tasten) -- senkrechtes
+  // Scrollen über der Galerie soll das Wandern nicht abschalten.
+  gallery.addEventListener('scroll', () => { if (Math.abs(gallery.scrollLeft - gesetzt) > 3) selbst(); }, { passive: true });
+  gallery.addEventListener('keydown', selbst);
+  const ziel = () => {
+    const r = gallery.getBoundingClientRect(), h = innerHeight;
+    // 0, wenn die Galerie unten ins Bild kommt, 1, wenn sie oben fast hinaus ist.
+    const t = Math.min(1, Math.max(0, (h - r.top) / (h + r.height * 0.5)));
+    const step = gallery.querySelector('.shot').getBoundingClientRect().width + 28;
+    return t * Math.min(step * 1.5, gallery.scrollWidth - gallery.clientWidth);
+  };
+  const schritt = () => {
+    if (!wandert) return;
+    const z = ziel();
+    jetzt += (z - jetzt) * 0.12;
+    if (Math.abs(z - jetzt) < 0.5) jetzt = z;
+    gallery.scrollLeft = jetzt;
+    gesetzt = gallery.scrollLeft;
+    if (jetzt !== z) frame = requestAnimationFrame(schritt);
+  };
+  if (wandert) {
+    gallery.classList.add('wandert');
+    addEventListener('scroll', () => { cancelAnimationFrame(frame); frame = requestAnimationFrame(schritt); }, { passive: true });
+    schritt();
+  }
 })();
 </script>
 </body>
