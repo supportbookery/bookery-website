@@ -176,15 +176,29 @@ h2 em, h1 em { font-style: italic; color: var(--accent); }
 .mini-prog { justify-items: stretch; width: 100%; }
 .mini-prog .bar { display: block; width: 100px; height: 6px; border-radius: 3px; background: var(--chip); overflow: hidden; }
 .mini-prog .bar i { display: block; width: 67%; height: 100%; background: var(--accent); border-radius: 3px; }
-.mini-podest { grid-auto-flow: column; align-items: end; gap: 4px; }
-.mini-podest i { width: 22px; border-radius: 4px 4px 0 0; background: var(--soft); }
-.mini-podest .p1 { height: 44px; background: var(--accent); } .mini-podest .p2 { height: 32px; } .mini-podest .p3 { height: 22px; }
+/* Treppchen wie in der App (FavoriteBooksView): Medaille über gestuftem Sockel,
+   gedämpftes Gold, Salbeisilber und Ton als Verlauf. */
+.mini-podest { grid-auto-flow: column; align-items: end; gap: 3px; padding-top: 4px; }
+.mini-podest span { display: grid; justify-items: center; gap: 2px; }
+.mini-podest b { font-size: 1.3rem; line-height: 1; }
+.mini-podest i { width: 30px; border-radius: 5px 5px 0 0; }
+.mini-podest .p1 i { height: 28px; background: linear-gradient(#EBD39B, #CDA047); }
+.mini-podest .p2 i { height: 19px; background: linear-gradient(#DDE2D9, #B5BDB1); }
+.mini-podest .p3 i { height: 12px; background: linear-gradient(#E6CDB0, #C0905F); }
+@media (prefers-color-scheme: dark) {
+  .mini-podest .p1 i { background: linear-gradient(#B8944A, #8F7232); }
+  .mini-podest .p2 i { background: linear-gradient(#8C9688, #667063); }
+  .mini-podest .p3 i { background: linear-gradient(#A67E58, #7D5C3E); }
+}
 .mini-timer { grid-auto-flow: column; align-items: center; gap: 8px; font: 600 1.05rem/1 var(--mono, ui-monospace, Menlo, monospace); color: var(--ink); font-variant-numeric: tabular-nums; }
 .mini-timer .dot { width: 8px; height: 8px; border-radius: 50%; background: #E0523F; animation: tick 1.6s ease-in-out infinite; }
 @keyframes tick { 50% { opacity: .25; } }
-.mini-jahr { grid-template-columns: repeat(6, 10px); gap: 6px; }
-.mini-jahr i { width: 10px; height: 10px; border-radius: 3px; background: var(--chip); }
-.mini-jahr i.x { background: var(--accent); }
+/* Sterne wie in der App (RatingView): warmer Verlauf, angeschnittener letzter Stern. */
+.mini-sterne .stars { display: flex; gap: 2px; }
+.mini-sterne .stars i { position: relative; width: 16px; height: 16px; background: color-mix(in srgb, var(--muted) 30%, transparent);
+  clip-path: polygon(50% 0, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%); }
+.mini-sterne .stars i::after { content: ""; position: absolute; inset: 0; width: calc(var(--f) * 100%);
+  background: linear-gradient(#FFCC3D, #FF940F); }
 .mini-wunsch svg { width: 30px; height: 30px; fill: var(--accent); }
 .mini-scan .code { width: 90px; height: 30px; background: repeating-linear-gradient(90deg, var(--ink) 0 2px, transparent 2px 4px, var(--ink) 4px 5px, transparent 5px 8px, var(--ink) 8px 11px, transparent 11px 13px); }
 .mini-umzug { gap: 2px; }
@@ -492,9 +506,9 @@ footer small { color: var(--muted); }
       </div>
       <ul class="contents reveal">
         <li><div class="mini mini-prog" aria-hidden="true"><span class="bar"><i></i></span><small>Seite 214 von 320</small></div><div><h3>Fortschritt im Blick</h3><p>Seite eintragen, bookery rechnet mit. E&#8209;Books und Hörbücher zählen in Prozent.</p><span class="formats">Buch · Kindle · tolino · Kobo · Audible · Spotify</span></div></li>
-        <li><div class="mini mini-podest" aria-hidden="true"><i class="p2"></i><i class="p1"></i><i class="p3"></i></div><div><h3>Regal und Treppchen</h3><p>Deine Bücher im Holzregal zum Anschauen, und ein Treppchen für deine drei Lieblingsbücher.</p></div></li>
+        <li><div class="mini mini-podest" aria-hidden="true"><span class="p2"><b>🥈</b><i></i></span><span class="p1"><b>🥇</b><i></i></span><span class="p3"><b>🥉</b><i></i></span></div><div><h3>Regal und Treppchen</h3><p>Deine Bücher im Holzregal zum Anschauen, und ein Treppchen für deine drei Lieblingsbücher.</p></div></li>
         <li><div class="mini mini-timer" aria-hidden="true"><span class="dot"></span>00:24:13</div><div><h3>Lesesitzungen</h3><p>Timer starten, lesen, beenden – mit Dauer und Seiten.</p></div></li>
-        <li><div class="mini mini-jahr" aria-hidden="true"><i class="x"></i><i class="x"></i><i class="."></i><i class="x"></i><i class="."></i><i class="x"></i><i class="x"></i><i class="x"></i><i class="."></i><i class="x"></i><i class="."></i><i class="."></i></div><div><h3>Dein Lesejahr</h3><p>Alle gelesenen Bücher nach Jahr und Monat, mit Sternen und Notizen.</p></div></li>
+        <li><div class="mini mini-sterne" aria-hidden="true"><span class="stars"><i style="--f:1"></i><i style="--f:1"></i><i style="--f:1"></i><i style="--f:1"></i><i style="--f:.3"></i></span><small>4,3 von 5</small></div><div><h3>Dein Lesejahr</h3><p>Alle gelesenen Bücher nach Jahr und Monat, mit Sternen und Notizen.</p></div></li>
         <li><div class="mini mini-wunsch" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg><small>Vorgemerkt</small></div><div><h3>Wunschliste</h3><p>Für alles, was du noch lesen willst – mit einem Tipp ins Regal.</p></div></li>
         <li><div class="mini mini-scan" aria-hidden="true"><span class="code"></span><small>978-3-257-…</small></div><div><h3>Schnell aufgenommen</h3><p>Suchen oder Strichcode scannen – Cover und Seitenzahl kommen von selbst.</p></div></li>
         <li><div class="mini mini-umzug" aria-hidden="true"><small>Goodreads</small><span>↓</span><b>bookery</b></div><div><h3>Umzug aus Bookie oder Goodreads</h3><p>CSV-Datei exportieren, in bookery einlesen – mit Sternen, Lesedaten und Notizen.</p></div></li>
