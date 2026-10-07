@@ -66,6 +66,41 @@ footer { text-align: center; display: flex; flex-direction: column; gap: 6px; al
 footer p { font-size: 13px; }
 .mail { user-select: all; color: var(--ink); font-weight: 600; }
 .links { display: flex; flex-wrap: wrap; justify-content: center; gap: 4px 18px; margin-top: 8px; font-size: 14px; }
+.qr { display: none; }
+.store .short { display: none; }
+
+/* Computer: breite Seite, Schritte nebeneinander, Hinweise zweispaltig, QR-Code fürs iPhone */
+@media (min-width: 900px) {
+  body { padding-block: 64px 72px; }
+  main { max-width: 1080px; gap: 44px; }
+  .duo { display: contents; }
+  .logo { width: 88px; height: 88px; border-radius: 20px; }
+  h1 { font-size: 56px; }
+  .lead { font-size: 21px; }
+  .danke { max-width: 640px; margin: 0 auto; width: 100%; }
+
+  .start { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 32px; align-items: center; }
+  .intro { font: 400 26px/1.35 var(--serif); text-wrap: balance; }
+  .qr { display: flex; gap: 20px; align-items: center; background: var(--card); border: 1px solid var(--border); border-radius: 20px; padding: 18px; }
+  .qr-code { flex: none; width: 116px; height: 116px; padding: 10px; border-radius: 12px; background: #FFFFFF; }
+  .qr-code svg { display: block; width: 100%; height: 100%; }
+
+  .steps ol { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; background: none; border: 0; padding: 0; }
+  .steps li { grid-template-columns: 1fr; gap: 14px; align-content: start; padding: 22px 20px; background: var(--card); border: 1px solid var(--border); border-radius: 20px; }
+  .steps li + li { border-top: 1px solid var(--border); }
+  .steps li > div { display: flex; flex-direction: column; align-items: flex-start; height: 100%; }
+  .steps .num { width: 36px; height: 36px; font-size: 17px; }
+  .steps .store { white-space: nowrap; }
+  .store .long { display: none; }
+  .store .short { display: inline; }
+  .steps p { margin-bottom: 14px; }
+  .steps li:not(:first-child) p { margin-bottom: 0; }
+
+  main:has(.duo) { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); column-gap: 28px; row-gap: 44px; }
+  main > header, main > .danke, main > .start, main > .steps, main > footer { grid-column: 1 / -1; }
+  .store:hover { filter: brightness(1.08); }
+}
+@media (min-width: 900px) and (hover: none) { .qr { display: none; } .start { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
@@ -84,11 +119,17 @@ footer p { font-size: 13px; }
     <p>Deine Adresse ist angekommen. Ich trage dich ein, danach schickt Apple dir die Einladung per Mail.</p></div>
   </section>
 
-  <section>
+  <section class="start">
     <p class="intro">bookery gibt es noch nicht im App Store. Du bekommst sie über <b>TestFlight</b>, die Test-App von Apple.</p>
+    <aside class="qr">
+      <div class="qr-code"><svg role="img" aria-label="QR-Code zu dieser Anleitung" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29"><path stroke="#283c34" d="M0 0.5h7m2 0h3m2 0h1m2 0h2m3 0h7m-29 1h1m5 0h1m1 0h1m1 0h1m1 0h3m1 0h2m4 0h1m5 0h1m-29 1h1m1 0h3m1 0h1m1 0h3m1 0h1m2 0h2m2 0h2m1 0h1m1 0h3m1 0h1m-29 1h1m1 0h3m1 0h1m1 0h2m2 0h3m1 0h2m1 0h2m1 0h1m1 0h3m1 0h1m-29 1h1m1 0h3m1 0h1m3 0h1m1 0h2m2 0h5m1 0h1m1 0h3m1 0h1m-29 1h1m5 0h1m2 0h1m1 0h4m2 0h1m2 0h1m1 0h1m5 0h1m-29 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-21 1h4m2 0h1m1 0h1m-17 1h1m5 0h1m1 0h2m5 0h3m1 0h1m1 0h2m2 0h3m-28 1h1m1 0h1m2 0h1m1 0h4m3 0h2m3 0h1m3 0h2m1 0h2m-26 1h2m2 0h1m1 0h3m4 0h2m6 0h1m-24 1h6m2 0h1m3 0h1m2 0h1m2 0h1m1 0h2m3 0h1m-26 1h3m2 0h2m1 0h1m2 0h1m1 0h3m3 0h1m2 0h2m4 0h1m-29 1h1m1 0h4m1 0h2m2 0h3m1 0h2m2 0h6m2 0h2m-28 1h2m3 0h1m2 0h1m2 0h5m3 0h2m1 0h1m1 0h2m-27 1h3m1 0h1m3 0h2m1 0h1m1 0h2m3 0h3m2 0h1m2 0h1m1 0h1m-29 1h1m1 0h2m1 0h2m1 0h2m4 0h2m1 0h1m2 0h1m4 0h2m-27 1h1m4 0h1m3 0h3m3 0h2m1 0h7m1 0h3m-29 1h4m2 0h2m1 0h9m1 0h1m1 0h1m3 0h1m2 0h1m-29 1h1m3 0h1m3 0h1m1 0h3m1 0h1m1 0h1m3 0h2m1 0h1m-24 1h1m3 0h4m4 0h1m2 0h4m1 0h5m1 0h3m-21 1h6m1 0h1m1 0h4m3 0h2m-26 1h7m2 0h1m1 0h1m1 0h5m1 0h2m1 0h1m1 0h3m-27 1h1m5 0h1m3 0h1m2 0h1m1 0h2m1 0h3m3 0h1m3 0h1m-29 1h1m1 0h3m1 0h1m3 0h2m1 0h1m2 0h1m2 0h7m2 0h1m-29 1h1m1 0h3m1 0h1m5 0h1m2 0h1m2 0h1m6 0h2m1 0h1m-29 1h1m1 0h3m1 0h1m2 0h1m2 0h1m2 0h2m2 0h1m1 0h7m-28 1h1m5 0h1m2 0h2m2 0h2m3 0h1m2 0h1m3 0h2m1 0h1m-29 1h7m1 0h1m2 0h2m2 0h1m1 0h1m1 0h1m1 0h2m1 0h1m1 0h1"/></svg>
+</div>
+      <div><h2>Du bist gerade am Computer?</h2>
+      <p>Installiert wird alles auf dem iPhone. Scanne den Code mit der Kamera, dann hast du diese Anleitung gleich dort.</p></div>
+    </aside>
   </section>
 
-  <section>
+  <section class="steps">
     <p class="label">So bekommst du bookery</p>
     <ol class="card">
       <li><span class="num">1</span><div>
@@ -96,7 +137,7 @@ footer p { font-size: 13px; }
         <p>Kostenlos, von Apple.</p>
         <a class="store" href="https://apps.apple.com/app/testflight/id899247664">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11m0 0 4-4m-4 4-4-4M5 19h14"/></svg>
-          TestFlight im App Store laden</a>
+          <span class="long">TestFlight im App Store laden</span><span class="short">Im App Store laden</span></a>
       </div></li>
       <li><span class="num">2</span><div>
         <h2>Auf meine Einladungs-Mail warten</h2>
@@ -113,6 +154,7 @@ footer p { font-size: 13px; }
     </ol>
   </section>
 
+  <div class="duo">
   <section>
     <p class="label">Gut zu wissen</p>
     <ul class="card">
@@ -156,6 +198,7 @@ footer p { font-size: 13px; }
       </div></li>
     </ul>
   </section>
+  </div>
 
   <footer>
     <span class="rule"></span>
