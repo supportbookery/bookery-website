@@ -68,8 +68,9 @@ h2 em, h1 em { font-style: italic; color: var(--accent); }
 .hero::before, .hero::after { content: ""; position: absolute; z-index: -1; pointer-events: none; }
 .hero::before { width: 760px; height: 760px; top: -240px; right: -200px; opacity: .55;
   background: radial-gradient(closest-side, var(--accent-card), transparent); }
-.hero::after { width: 620px; height: 620px; bottom: -120px; left: -260px; opacity: .28;
-  background: radial-gradient(closest-side, var(--soft), transparent); }
+/* Runder Schein hinter dem Text, wie auf smarthome.dustingotte.de. */
+.hero::after { width: 760px; height: 760px; top: 50%; left: -80px; transform: translateY(-50%); border-radius: 50%;
+  background: radial-gradient(closest-side, color-mix(in srgb, var(--soft) 36%, transparent), color-mix(in srgb, var(--soft) 14%, transparent) 50%, transparent); }
 .hero .wrap { display: grid; grid-template-columns: 1.05fr .95fr; gap: 48px; align-items: center; }
 .hero-text { display: grid; gap: 22px; justify-items: start; }
 .badge { display: inline-flex; align-items: center; gap: 8px; padding: 7px 14px 7px 10px; border-radius: 999px;
