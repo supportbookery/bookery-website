@@ -101,6 +101,16 @@ footer p { font-size: 13px; }
   .store:hover { filter: brightness(1.08); }
 }
 @media (min-width: 900px) and (hover: none) { .qr { display: none; } .start { grid-template-columns: 1fr; } }
+
+/* ---------- Nach oben (wie auf dustingotte.de: erscheint nach knapp einer Bildschirmhöhe) ---------- */
+.to-top { position: fixed; z-index: 40; right: 16px; bottom: calc(16px + env(safe-area-inset-bottom)); width: 48px; height: 48px;
+  border: 0; border-radius: 50%; background: var(--ink); color: var(--paper); display: grid; place-items: center; cursor: pointer;
+  box-shadow: 0 10px 26px rgb(0 0 0 / .22); opacity: 0; transform: translateY(12px) scale(.9); pointer-events: none;
+  transition: opacity .3s cubic-bezier(.2,.7,.2,1), transform .3s cubic-bezier(.2,.7,.2,1); }
+.to-top.show { opacity: 1; transform: none; pointer-events: auto; }
+.to-top:active { transform: scale(.94); }
+.to-top svg { width: 22px; height: 22px; }
+@media (min-width: 900px) { .to-top { right: 28px; bottom: 28px; width: 52px; height: 52px; } }
 </style>
 </head>
 <body>
@@ -214,6 +224,21 @@ footer p { font-size: 13px; }
 <script>
 // Kommt man frisch von der Anmeldung, steht oben eine Bestätigung.
 if (location.search.indexOf('danke') > -1) document.getElementById('danke').classList.add('show');
+
+// Nach oben: runder Knopf unten rechts, erscheint nach knapp einer Bildschirmhöhe (wie auf dustingotte.de).
+{
+  const toTop = document.createElement('button');
+  toTop.type = 'button';
+  toTop.className = 'to-top';
+  toTop.setAttribute('aria-label', 'Nach oben');
+  toTop.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>';
+  const ruhig = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  toTop.addEventListener('click', () => scrollTo({ top: 0, behavior: ruhig ? 'auto' : 'smooth' }));
+  document.body.appendChild(toTop);
+  const zeigen = () => toTop.classList.toggle('show', scrollY > innerHeight * 0.8);
+  addEventListener('scroll', zeigen, { passive: true });
+  zeigen();
+}
 </script>
 </body>
 </html>

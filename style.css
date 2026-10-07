@@ -148,3 +148,13 @@ footer small { color: var(--muted); }
   *, *::before, *::after { animation: none !important; transition: none !important; }
   html { scroll-behavior: auto; }
 }
+
+/* ---------- Nach oben (wie auf dustingotte.de: erscheint nach knapp einer Bildschirmhöhe) ---------- */
+.to-top { position: fixed; z-index: 40; right: 16px; bottom: calc(16px + env(safe-area-inset-bottom)); width: 48px; height: 48px;
+  border: 0; border-radius: 50%; background: var(--ink); color: var(--paper); display: grid; place-items: center; cursor: pointer;
+  box-shadow: 0 10px 26px rgb(0 0 0 / .22); opacity: 0; transform: translateY(12px) scale(.9); pointer-events: none;
+  transition: opacity .3s cubic-bezier(.2,.7,.2,1), transform .3s cubic-bezier(.2,.7,.2,1); }
+.to-top.show { opacity: 1; transform: none; pointer-events: auto; }
+.to-top:active { transform: scale(.94); }
+.to-top svg { width: 22px; height: 22px; }
+@media (min-width: 900px) { .to-top { right: 28px; bottom: 28px; width: 52px; height: 52px; } }
