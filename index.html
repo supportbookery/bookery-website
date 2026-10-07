@@ -201,7 +201,8 @@ h2 em, h1 em { font-style: italic; color: var(--accent); }
   background: linear-gradient(#FFCC3D, #FF940F); }
 /* Herz in der Farbe der Wunschliste in der App (Systempink). */
 /* Kleines Widget wie in der App: Buchfarbe als Fläche, Cover links, Fortschrittsring rechts. */
-.mini-widget { gap: 6px; }
+.mini-widget { grid-auto-flow: column; align-items: center; gap: 8px; padding: 0 10px; }
+.mini-widget small { white-space: normal; line-height: 1.25; text-align: left; }
 .mini-widget .w { position: relative; width: 56px; height: 56px; border-radius: 14px; background: linear-gradient(#2A6B66, #163D3A);
   box-shadow: 0 3px 8px -3px rgb(0 0 0 / .35); }
 .mini-widget .cover { position: absolute; left: 7px; top: 7px; width: 24px; height: 37px; border-radius: 2px; object-fit: cover; box-shadow: 0 1px 3px rgb(0 0 0 / .4); }
@@ -228,7 +229,9 @@ h2 em, h1 em { font-style: italic; color: var(--accent); }
 .mini-backup .doc img { width: 22px; height: 22px; border-radius: 6px; margin-top: 6px; }
 @media (prefers-color-scheme: dark) { .mini-backup .doc { background: #3A4D40; } .mini-backup .doc::after { background: #56705D; } }
 @media (max-width: 760px) { .contents { grid-template-columns: 1fr; } }
-@media (max-width: 420px) { .contents li { grid-template-columns: 104px 1fr; gap: 16px; } .mini { padding: 0 8px; } .mini-prog .bar { width: 80px; } .mini-scan .code { width: 72px; } .mini small { font-size: .64rem; } .mini-timer { font-size: .88rem; gap: 6px; } }
+@media (max-width: 420px) { .contents li { grid-template-columns: 104px 1fr; gap: 16px; } .mini { padding: 0 8px; } .mini-prog .bar { width: 80px; } .mini-scan .code { width: 72px; } .mini small { font-size: .64rem; } .mini-timer { font-size: .88rem; gap: 6px; }
+  .mini-widget { gap: 6px; padding: 0 6px; } .mini-widget .w { width: 46px; height: 46px; border-radius: 12px; }
+  .mini-widget .cover { left: 6px; top: 6px; width: 20px; height: 31px; } .mini-widget .ring { right: 5px; top: 5px; width: 15px; height: 15px; } .mini-widget .ring b { font-size: .38rem; } }
 
 /* ---------- Farbwelten ---------- */
 .themes { display: grid; grid-template-columns: auto 1fr; gap: clamp(32px, 6vw, 80px); align-items: center; background: var(--card);
@@ -531,7 +534,7 @@ footer small { color: var(--muted); }
         <li><div class="mini mini-podest" aria-hidden="true"><span class="p2"><b>🥈</b><i></i></span><span class="p1"><b>🥇</b><i></i></span><span class="p3"><b>🥉</b><i></i></span></div><div><h3>Regal und Treppchen</h3><p>Deine Bücher im Holzregal zum Anschauen, und ein Treppchen für deine drei Lieblingsbücher.</p></div></li>
         <li><div class="mini mini-timer" aria-hidden="true"><span class="dot"></span>00:24:13</div><div><h3>Lesesitzungen</h3><p>Timer starten, lesen, beenden – mit Dauer und Seiten.</p></div></li>
         <li><div class="mini mini-sterne" aria-hidden="true"><span class="stars"><i style="--f:1"></i><i style="--f:1"></i><i style="--f:1"></i><i style="--f:1"></i><i style="--f:.3"></i></span><small>4,3 von 5</small></div><div><h3>Dein Lesejahr</h3><p>Alle gelesenen Bücher nach Jahr und Monat, mit Sternen und Notizen.</p></div></li>
-        <li><div class="mini mini-widget" aria-hidden="true"><span class="w"><img class="cover" src="shots/widget-cover.jpg" alt="" width="72" height="112"><i class="ring"><b>67</b></i></span><small>auch in CarPlay</small></div><div><h3>Widget, auch im Auto</h3><p>Dein aktuelles Buch mit Fortschritt auf dem Home-Bildschirm – und ab iOS 26 auch in CarPlay, etwa beim Hörbuch.</p></div></li>
+        <li><div class="mini mini-widget" aria-hidden="true"><span class="w"><img class="cover" src="shots/widget-cover.jpg" alt="" width="72" height="112"><i class="ring"><b>67</b></i></span><small>auch in<br>CarPlay</small></div><div><h3>Widget, auch im Auto</h3><p>Dein aktuelles Buch mit Fortschritt auf dem Home-Bildschirm – und ab iOS 26 auch in CarPlay, etwa beim Hörbuch.</p></div></li>
         <li><div class="mini mini-wunsch" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg><small>Vorgemerkt</small></div><div><h3>Wunschliste</h3><p>Für alles, was du noch lesen willst – mit einem Tipp ins Regal.</p></div></li>
         <li><div class="mini mini-scan" aria-hidden="true"><span class="code"></span><small>978-3-257-…</small></div><div><h3>Schnell aufgenommen</h3><p>Suchen oder Strichcode scannen – Cover und Seitenzahl kommen von selbst.</p></div></li>
         <li><div class="mini mini-umzug" aria-hidden="true"><small>Goodreads</small><span>↓</span><b>bookery</b></div><div><h3>Umzug aus Bookie oder Goodreads</h3><p>CSV-Datei exportieren, in bookery einlesen – mit Sternen, Lesedaten und Notizen.</p></div></li>
