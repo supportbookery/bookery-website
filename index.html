@@ -199,7 +199,9 @@ h2 em, h1 em { font-style: italic; color: var(--accent); }
   clip-path: polygon(50% 0, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%); }
 .mini-sterne .stars i::after { content: ""; position: absolute; inset: 0; width: calc(var(--f) * 100%);
   background: linear-gradient(#FFCC3D, #FF940F); }
-.mini-wunsch svg { width: 30px; height: 30px; fill: var(--accent); }
+/* Herz in der Farbe der Wunschliste in der App (Systempink). */
+.mini-wunsch svg { width: 30px; height: 30px; fill: #FF2D55; }
+@media (prefers-color-scheme: dark) { .mini-wunsch svg { fill: #FF375F; } }
 .mini-scan .code { width: 90px; height: 30px; background: repeating-linear-gradient(90deg, var(--ink) 0 2px, transparent 2px 4px, var(--ink) 4px 5px, transparent 5px 8px, var(--ink) 8px 11px, transparent 11px 13px); }
 .mini-umzug { gap: 2px; }
 .mini-umzug span { color: var(--muted); }
