@@ -42,9 +42,10 @@ a:hover { text-decoration-thickness: 2px; }
 
 /* ---------- Kopf der Seite ---------- */
 .page-head { position: relative; padding: clamp(48px, 9vw, 104px) 0 clamp(36px, 6vw, 64px); isolation: isolate; }
-.page-head::before, .page-head::after { content: ""; position: absolute; z-index: -1; border-radius: 50%; filter: blur(70px); pointer-events: none; }
-.page-head::before { width: 480px; height: 480px; background: var(--accent-card); opacity: .7; top: -160px; right: -60px; }
-.page-head::after { width: 320px; height: 320px; background: var(--soft); opacity: .22; top: 40px; left: -160px; }
+/* Verlauf statt filter: blur, sonst zeigt Safari ein helles Rechteck */
+.page-head::before, .page-head::after { content: ""; position: absolute; z-index: -1; pointer-events: none; }
+.page-head::before { width: 720px; height: 720px; opacity: .7; top: -280px; right: -180px; background: radial-gradient(closest-side, var(--accent-card), transparent); }
+.page-head::after { width: 560px; height: 560px; opacity: .22; top: -80px; left: -280px; background: radial-gradient(closest-side, var(--soft), transparent); }
 .page-head .wrap { display: grid; gap: 18px; justify-items: start; }
 h1 { font: 400 clamp(2.6rem, 6vw, 4.4rem)/1.04 var(--serif); letter-spacing: -.01em; margin: 0; }
 h1 em { font-style: italic; color: var(--accent); }
