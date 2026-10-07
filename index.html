@@ -229,15 +229,12 @@ h2 em, h1 em { font-style: italic; color: var(--accent); }
 .mini-backup .doc img { width: 22px; height: 22px; border-radius: 6px; margin-top: 6px; }
 @media (prefers-color-scheme: dark) { .mini-backup .doc { background: #3A4D40; } .mini-backup .doc::after { background: #56705D; } }
 @media (max-width: 760px) { .contents { grid-template-columns: 1fr; } }
-/* Handy: Kacheln mit Ansicht und Titel, ohne Beschreibung -- die Liste wurde dort zu lang. */
+/* Handy: nur die Ansichten als Kacheln -- Titel bleiben für Screenreader, Beschreibungen fallen weg. */
 @media (max-width: 600px) {
-  .contents { grid-template-columns: 1fr 1fr; gap: 12px; border-top: 0; }
-  .contents li { grid-template-columns: 1fr; gap: 10px; padding: 12px; border: 1px solid var(--border); border-radius: 18px;
-    background: var(--card); align-content: start; }
-  .contents p, .contents .formats { display: none; }
-  .contents h3 { font-size: 1.02rem; line-height: 1.25; }
-  .contents .mini { height: 72px; border: 0; background: var(--paper); }
-  .contents .mini-more { border: 1px dashed var(--border); background: transparent; }
+  .contents { grid-template-columns: 1fr 1fr; gap: 10px; border-top: 0; }
+  .contents li { display: block; padding: 0; border: 0; }
+  .contents li > div:not(.mini) { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+  .contents .mini { height: 96px; border-radius: 18px; }
   .contents .mini-prog .bar { background: var(--border); }
 }
 @media (max-width: 420px) { .mini { padding: 0 8px; } .mini-prog .bar { width: 80px; } .mini-scan .code { width: 72px; } .mini small { font-size: .64rem; } .mini-timer { font-size: .88rem; gap: 6px; }
