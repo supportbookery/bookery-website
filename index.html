@@ -230,6 +230,13 @@ h2 em, h1 em { font-style: italic; color: var(--accent); }
 .signup-form { display: grid; gap: 10px; background: var(--card); border-radius: 24px; padding: clamp(20px, 3vw, 28px);
   box-shadow: 0 24px 50px -28px rgb(0 0 0 / .35); transition: background-color .5s; }
 .signup-form label { font-weight: 600; font-size: .95rem; }
+.form-head { display: flex; align-items: center; gap: 10px; padding-bottom: 14px; margin-bottom: 4px; border-bottom: 1px solid var(--border); }
+.form-head h3 { margin: 0; font: 400 1.35rem/1.2 var(--serif); }
+/* Immer rot wie das Hero-Badge: zeigt, dass die Anmeldung gerade offen ist */
+.live-tag { display: inline-flex; align-items: center; gap: 6px; padding: 4px 9px 4px 8px; border-radius: 999px; background: #D93036; color: #fff;
+  font: 700 .68rem/1.2 var(--sans); letter-spacing: .12em; text-transform: uppercase; }
+.live-tag i { width: 6px; height: 6px; border-radius: 50%; background: #fff; animation: ping-white 2s infinite; }
+@keyframes ping-white { 0% { box-shadow: 0 0 0 0 rgb(255 255 255 / .7); } 80%, 100% { box-shadow: 0 0 0 6px transparent; } }
 .field { display: grid; gap: 10px; }
 .field input { width: 100%; min-height: 56px; padding: 0 18px; border-radius: 16px; border: 1.5px solid var(--border); background: var(--paper);
   color: var(--ink); font: 400 1.1rem/1 var(--sans); transition: border-color .2s, box-shadow .2s; }
@@ -541,16 +548,20 @@ footer small { color: var(--muted); }
     <div class="wrap">
       <div class="signup reveal">
         <div class="signup-text">
-          <span class="eyebrow">Mitmachen</span>
+          <span class="eyebrow">Beta-Test</span>
           <h2>Lies mit,<br><em>bevor es alle tun.</em></h2>
-          <p>bookery ist gerade in der Testphase. Gib deine E-Mail-Adresse ein, und du bekommst eine Einladung von Apple für TestFlight, die Test-App für das iPhone. Kostenlos und ohne Verpflichtung.</p>
+          <p>Die Beta von bookery läuft gerade. Gib deine E-Mail-Adresse ein, und du bekommst eine Einladung von Apple für TestFlight, die Test-App für das iPhone. Kostenlos und ohne Verpflichtung.</p>
         </div>
         <form class="signup-form" id="signup" action="https://dustingotte.de/api/testen" method="post" novalidate>
+          <div class="form-head">
+            <span class="live-tag"><i aria-hidden="true"></i>Live</span>
+            <h3>Anmeldung zur Beta</h3>
+          </div>
           <label for="signup-email">Deine E-Mail-Adresse</label>
           <div class="field">
             <input id="signup-email" name="email" type="email" inputmode="email" autocomplete="email" autocapitalize="off" spellcheck="false"
               placeholder="name@beispiel.de" required maxlength="254">
-            <button class="button" type="submit"><span>Ich möchte testen</span>
+            <button class="button" type="submit"><span>Zur Beta anmelden</span>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
           </div>
           <input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
@@ -715,7 +726,7 @@ footer small { color: var(--muted); }
         : 'Das hat gerade nicht geklappt. <a href="' + mailto(addr) + '">Per E-Mail anfragen</a> – die Nachricht ist schon vorbereitet.');
     } finally {
       button.disabled = false;
-      button.querySelector('span').textContent = 'Ich möchte testen';
+      button.querySelector('span').textContent = 'Zur Beta anmelden';
     }
   });
 
