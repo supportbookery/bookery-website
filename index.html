@@ -202,15 +202,19 @@ h2 em, h1 em { font-style: italic; color: var(--accent); }
 /* Herz in der Farbe der Wunschliste in der App (Systempink). */
 /* Kleines Widget wie in der App: Buchfarbe als Fläche, Cover links, Fortschrittsring rechts. */
 .mini-widget { gap: 6px; }
-.mini-widget .w { position: relative; width: 52px; height: 52px; border-radius: 13px; background: linear-gradient(#8E3A3A, #5A2222);
+.mini-widget .w { position: relative; width: 56px; height: 56px; border-radius: 14px; background: linear-gradient(#2A6B66, #163D3A);
   box-shadow: 0 3px 8px -3px rgb(0 0 0 / .35); }
-.mini-widget .cover { position: absolute; left: 7px; top: 8px; width: 17px; height: 24px; border-radius: 2px; background: #C9A27A; box-shadow: 0 1px 2px rgb(0 0 0 / .3); }
+.mini-widget .cover { position: absolute; left: 7px; top: 7px; width: 24px; height: 37px; border-radius: 2px; object-fit: cover; box-shadow: 0 1px 3px rgb(0 0 0 / .4); }
 .mini-widget .ring { position: absolute; right: 6px; top: 6px; width: 18px; height: 18px; border-radius: 50%; display: grid; place-items: center;
   background: conic-gradient(#fff 67%, rgb(255 255 255 / .25) 0); }
-.mini-widget .ring::before { content: ""; position: absolute; inset: 2.5px; border-radius: 50%; background: #6F2B2B; }
+.mini-widget .ring::before { content: ""; position: absolute; inset: 2.5px; border-radius: 50%; background: #23605B; }
 .mini-widget .ring b { position: relative; font-size: .45rem; color: #fff; }
+.mini-more { border-style: dashed; background: transparent; }
+.mini-more span { font: 300 2rem/1 var(--serif); color: var(--accent); }
 .mini-wunsch svg { width: 30px; height: 30px; fill: #FF2D55; }
-@media (prefers-color-scheme: dark) { .mini-wunsch svg { fill: #FF375F; } }
+@media (prefers-color-scheme: dark) { .mini-more { border-style: dashed; background: transparent; }
+.mini-more span { font: 300 2rem/1 var(--serif); color: var(--accent); }
+.mini-wunsch svg { fill: #FF375F; } }
 .mini-scan .code { width: 90px; height: 30px; background: repeating-linear-gradient(90deg, var(--ink) 0 2px, transparent 2px 4px, var(--ink) 4px 5px, transparent 5px 8px, var(--ink) 8px 11px, transparent 11px 13px); }
 .mini-umzug { gap: 2px; }
 .mini-umzug span { color: var(--muted); }
@@ -527,11 +531,12 @@ footer small { color: var(--muted); }
         <li><div class="mini mini-podest" aria-hidden="true"><span class="p2"><b>🥈</b><i></i></span><span class="p1"><b>🥇</b><i></i></span><span class="p3"><b>🥉</b><i></i></span></div><div><h3>Regal und Treppchen</h3><p>Deine Bücher im Holzregal zum Anschauen, und ein Treppchen für deine drei Lieblingsbücher.</p></div></li>
         <li><div class="mini mini-timer" aria-hidden="true"><span class="dot"></span>00:24:13</div><div><h3>Lesesitzungen</h3><p>Timer starten, lesen, beenden – mit Dauer und Seiten.</p></div></li>
         <li><div class="mini mini-sterne" aria-hidden="true"><span class="stars"><i style="--f:1"></i><i style="--f:1"></i><i style="--f:1"></i><i style="--f:1"></i><i style="--f:.3"></i></span><small>4,3 von 5</small></div><div><h3>Dein Lesejahr</h3><p>Alle gelesenen Bücher nach Jahr und Monat, mit Sternen und Notizen.</p></div></li>
-        <li><div class="mini mini-widget" aria-hidden="true"><span class="w"><i class="cover"></i><i class="ring"><b>67</b></i></span><small>auch in CarPlay</small></div><div><h3>Widget, auch im Auto</h3><p>Dein aktuelles Buch mit Fortschritt auf dem Home-Bildschirm – und ab iOS 26 auch in CarPlay, etwa beim Hörbuch.</p></div></li>
+        <li><div class="mini mini-widget" aria-hidden="true"><span class="w"><img class="cover" src="shots/widget-cover.jpg" alt="" width="72" height="112"><i class="ring"><b>67</b></i></span><small>auch in CarPlay</small></div><div><h3>Widget, auch im Auto</h3><p>Dein aktuelles Buch mit Fortschritt auf dem Home-Bildschirm – und ab iOS 26 auch in CarPlay, etwa beim Hörbuch.</p></div></li>
         <li><div class="mini mini-wunsch" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg><small>Vorgemerkt</small></div><div><h3>Wunschliste</h3><p>Für alles, was du noch lesen willst – mit einem Tipp ins Regal.</p></div></li>
         <li><div class="mini mini-scan" aria-hidden="true"><span class="code"></span><small>978-3-257-…</small></div><div><h3>Schnell aufgenommen</h3><p>Suchen oder Strichcode scannen – Cover und Seitenzahl kommen von selbst.</p></div></li>
         <li><div class="mini mini-umzug" aria-hidden="true"><small>Goodreads</small><span>↓</span><b>bookery</b></div><div><h3>Umzug aus Bookie oder Goodreads</h3><p>CSV-Datei exportieren, in bookery einlesen – mit Sternen, Lesedaten und Notizen.</p></div></li>
         <li><div class="mini mini-backup" aria-hidden="true"><span class="docwrap"><span class="doc"><img src="logo.png" alt="" width="20" height="20"></span></span><small>Backup.bookery</small></div><div><h3>Backup als Datei</h3><p>Deine Bibliothek exportieren und auf dem neuen iPhone wieder einspielen.</p></div></li>
+        <li class="more"><div class="mini mini-more" aria-hidden="true"><span>+</span></div><div><h3>Weitere Funktionen kommen dazu</h3><p>bookery wächst mit dem, was beim Lesen wirklich hilft – Wünsche gern über „Feedback“ in der App.</p></div></li>
       </ul>
     </div>
   </section>
