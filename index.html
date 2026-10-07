@@ -200,6 +200,7 @@ h2 em, h1 em { font-style: italic; color: var(--accent); }
 /* ---------- Datenschutz ---------- */
 .privacy { background: #13201A; color: #F3F6F2; border-radius: clamp(28px, 4vw, 48px); margin: 0 12px; padding: clamp(64px, 10vw, 112px) 0; position: relative; overflow: hidden; isolation: isolate; }
 .privacy::before { content: ""; position: absolute; inset: auto -10% -60% auto; width: 640px; height: 640px; border-radius: 50%; background: var(--accent); opacity: .22; filter: blur(90px); z-index: -1; }
+.privacy.privacy-top { margin-top: clamp(56px, 9vw, 104px); }
 .privacy .eyebrow { color: #AFD0BB; }
 .privacy h2 em { color: #AFD0BB; }
 .privacy .section-head p { color: #BFC8C1; }
@@ -368,9 +369,9 @@ footer small { color: var(--muted); }
   <div class="wrap">
     <a class="brand" href="./"><img class="app-icon" src="icons/sage.png" alt="" width="34" height="34">bookery</a>
     <nav class="nav-links" aria-label="Abschnitte">
+      <a href="#privat">Datenschutz</a>
       <a href="#funktionen">Funktionen</a>
       <a href="#farben">Farben</a>
-      <a href="#privat">Datenschutz</a>
       <a href="#fragen">Fragen</a>
     </nav>
     <a class="pill" href="#testen">Testen</a>
@@ -424,6 +425,34 @@ footer small { color: var(--muted); }
       <div class="board-shadow"></div>
     </div>
     <p class="shelf-caption">Hier wächst dein Lesetagebuch – Seite für Seite, Buch für Buch.</p>
+  </section>
+
+  <section class="privacy privacy-top" id="privat">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Privat von Anfang an</span>
+        <h2>Deine Bücher<br><em>gehören dir.</em></h2>
+        <p>bookery hat keinen eigenen Server. Was du liest, bleibt auf deinem iPhone – wir sehen deine Daten nicht.</p>
+      </div>
+      <div class="pillars">
+        <div class="pillar reveal">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18h2"/></svg>
+          <h3>Nur auf deinem iPhone</h3>
+          <p>Bücher, Notizen und Bewertungen liegen auf deinem Gerät und im Backup, das du selbst bestimmst.</p>
+        </div>
+        <div class="pillar reveal" style="--d:100ms">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0M3 3l18 18"/></svg>
+          <h3>Kein Konto</h3>
+          <p>Keine Anmeldung, kein Passwort. App öffnen und loslegen.</p>
+        </div>
+        <div class="pillar reveal" style="--d:200ms">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/><path d="M3 3l18 18"/></svg>
+          <h3>Kein Tracking</h3>
+          <p>Keine Werbung, keine Analyse, keine Weitergabe deines Leseverhaltens.</p>
+        </div>
+      </div>
+      <p class="more reveal"><a href="datenschutz.html">Datenschutzerklärung lesen →</a></p>
+    </div>
   </section>
 
   <section class="section" id="einblick">
@@ -516,34 +545,6 @@ footer small { color: var(--muted); }
           </div>
         </div>
       </div>
-    </div>
-  </section>
-
-  <section class="privacy" id="privat">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <span class="eyebrow">Privat von Anfang an</span>
-        <h2>Deine Bücher<br><em>gehören dir.</em></h2>
-        <p>bookery hat keinen eigenen Server. Was du liest, bleibt auf deinem iPhone – wir sehen deine Daten nicht.</p>
-      </div>
-      <div class="pillars">
-        <div class="pillar reveal">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18h2"/></svg>
-          <h3>Nur auf deinem iPhone</h3>
-          <p>Bücher, Notizen und Bewertungen liegen auf deinem Gerät und im Backup, das du selbst bestimmst.</p>
-        </div>
-        <div class="pillar reveal" style="--d:100ms">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0M3 3l18 18"/></svg>
-          <h3>Kein Konto</h3>
-          <p>Keine Anmeldung, kein Passwort. App öffnen und loslegen.</p>
-        </div>
-        <div class="pillar reveal" style="--d:200ms">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/><path d="M3 3l18 18"/></svg>
-          <h3>Kein Tracking</h3>
-          <p>Keine Werbung, keine Analyse, keine Weitergabe deines Leseverhaltens.</p>
-        </div>
-      </div>
-      <p class="more reveal"><a href="datenschutz.html">Datenschutzerklärung lesen →</a></p>
     </div>
   </section>
 
