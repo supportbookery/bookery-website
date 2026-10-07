@@ -206,7 +206,14 @@ h2 em, h1 em { font-style: italic; color: var(--accent); }
 .mini-umzug { gap: 2px; }
 .mini-umzug span { color: var(--muted); }
 .mini-umzug b { font: 400 1rem/1 var(--serif); color: var(--ink); }
-.mini-backup .file { white-space: nowrap; font-size: .72rem; font-weight: 600; padding: 7px 10px; border-radius: 8px; background: var(--chip); color: var(--ink); }
+/* Backup-Datei wie in der Dateien-App: Blatt mit Eselsohr, bookery-Logo darauf, echte Endung. */
+.mini-backup { gap: 6px; }
+.mini-backup .docwrap { filter: drop-shadow(0 1px 1px rgb(0 0 0 / .12)) drop-shadow(0 3px 6px rgb(0 0 0 / .1)); }
+.mini-backup .doc { position: relative; width: 36px; height: 46px; display: grid; place-items: center; background: #FFFFFF;
+  border-radius: 5px; clip-path: polygon(0 0, 66% 0, 100% 26%, 100% 100%, 0 100%); }
+.mini-backup .doc::after { content: ""; position: absolute; top: 0; right: 0; width: 12px; height: 12px; background: #DCE3DA; border-bottom-left-radius: 3px; }
+.mini-backup .doc img { width: 22px; height: 22px; border-radius: 6px; margin-top: 6px; }
+@media (prefers-color-scheme: dark) { .mini-backup .doc { background: #3A4D40; } .mini-backup .doc::after { background: #56705D; } }
 @media (max-width: 760px) { .contents { grid-template-columns: 1fr; } }
 @media (max-width: 420px) { .contents li { grid-template-columns: 104px 1fr; gap: 16px; } .mini { padding: 0 8px; } .mini-prog .bar { width: 80px; } .mini-scan .code { width: 72px; } .mini small { font-size: .64rem; } .mini-timer { font-size: .88rem; gap: 6px; } }
 
@@ -514,7 +521,7 @@ footer small { color: var(--muted); }
         <li><div class="mini mini-wunsch" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg><small>Vorgemerkt</small></div><div><h3>Wunschliste</h3><p>Für alles, was du noch lesen willst – mit einem Tipp ins Regal.</p></div></li>
         <li><div class="mini mini-scan" aria-hidden="true"><span class="code"></span><small>978-3-257-…</small></div><div><h3>Schnell aufgenommen</h3><p>Suchen oder Strichcode scannen – Cover und Seitenzahl kommen von selbst.</p></div></li>
         <li><div class="mini mini-umzug" aria-hidden="true"><small>Goodreads</small><span>↓</span><b>bookery</b></div><div><h3>Umzug aus Bookie oder Goodreads</h3><p>CSV-Datei exportieren, in bookery einlesen – mit Sternen, Lesedaten und Notizen.</p></div></li>
-        <li><div class="mini mini-backup" aria-hidden="true"><span class="file">bookery.json</span></div><div><h3>Backup als Datei</h3><p>Deine Bibliothek exportieren und auf dem neuen iPhone wieder einspielen.</p></div></li>
+        <li><div class="mini mini-backup" aria-hidden="true"><span class="docwrap"><span class="doc"><img src="logo.png" alt="" width="20" height="20"></span></span><small>Backup.bookery</small></div><div><h3>Backup als Datei</h3><p>Deine Bibliothek exportieren und auf dem neuen iPhone wieder einspielen.</p></div></li>
       </ul>
     </div>
   </section>
