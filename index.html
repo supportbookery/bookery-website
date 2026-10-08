@@ -9,7 +9,7 @@
 <meta name="theme-color" content="#16241B" media="(prefers-color-scheme: dark)">
 <meta property="og:title" content="bookery – Dein Lesetagebuch für das iPhone">
 <meta property="og:description" content="Halte fest, was du liest – schön sortiert und ganz privat. Ohne Konto, ohne Werbung, ohne Tracking.">
-<meta property="og:image" content="https://bookery.dustingotte.de/shots/1-start.jpg">
+<meta property="og:image" content="https://bookery-app.de/shots/1-start.jpg">
 <link rel="icon" href="logo.png" type="image/png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <script>document.documentElement.classList.add('js')</script>
@@ -591,7 +591,7 @@ footer small { color: var(--muted); }
           <h2>Gestalte <em>mit.</em></h2>
           <p>Die Beta von bookery läuft gerade. Gib deine E-Mail-Adresse ein, und du bekommst eine Einladung von Apple für TestFlight, die Test-App für das iPhone. Kostenlos und ohne Verpflichtung.</p>
         </div>
-        <form class="signup-form" id="signup" action="https://dustingotte.de/api/testen" method="post" novalidate>
+        <form class="signup-form" id="signup" action="/api/testen" method="post" novalidate>
           <div class="form-head">
             <span class="live-tag"><i aria-hidden="true"></i>Live</span>
             <h3>Anmeldung zur Beta</h3>
@@ -659,7 +659,7 @@ footer small { color: var(--muted); }
     <div class="wrap contact reveal">
       <span class="eyebrow">Kontakt</span>
       <p>Fragen, Fehler oder Wünsche? Schreib mir.</p>
-      <a class="mail" href="mailto:support.bookery@gmail.com">support.bookery@gmail.com</a>
+      <a class="mail" href="mailto:info@bookery-app.de">info@bookery-app.de</a>
       <p style="font-size:.92rem">Am besten mit iPhone-Modell und iOS-Version, bei Fehlern gern mit Bildschirmfoto.</p>
     </div>
   </section>
@@ -754,7 +754,7 @@ footer small { color: var(--muted); }
   const note = document.getElementById('signup-note');
   const noteText = note.innerHTML;
   const button = form.querySelector('button');
-  const mailto = addr => 'mailto:support.bookery@gmail.com?subject=' + encodeURIComponent('Ich möchte bookery testen') +
+  const mailto = addr => 'mailto:info@bookery-app.de?subject=' + encodeURIComponent('Ich möchte bookery testen') +
     '&body=' + encodeURIComponent('Hallo,\n\nich würde bookery gerne testen. Bitte lade mich über TestFlight ein' + (addr ? ' (' + addr + ')' : '') + '.\n\nDanke!');
   const fail = html => { note.innerHTML = html; note.classList.add('error'); };
   document.querySelectorAll('[data-focus-signup]').forEach(a => a.addEventListener('click', () => setTimeout(() => input.focus({ preventScroll: true }), 500)));

@@ -16,6 +16,6 @@ for f in style.css legal.js $(cd "$build" && find shots logo.png apple-touch-ico
 	v=$(shasum "$build/$f" | cut -c1-10)
 	find "$build" -name '*.html' -exec sed -i '' -e "s|=\"\(/\{0,1\}\)$f\"|=\"\1$f?v=$v\"|" {} +
 done
-ssh webserver 'sudo install -d -o deploy -g deploy /var/www/bookery.dustingotte.de'
-rsync -avz --delete --checksum "$build"/ webserver:/var/www/bookery.dustingotte.de/
-echo "Online: https://bookery.dustingotte.de"
+ssh webserver 'sudo install -d -o deploy -g deploy /var/www/bookery-app.de'
+rsync -avz --delete --checksum "$build"/ webserver:/var/www/bookery-app.de/
+echo "Online: https://bookery-app.de"
