@@ -720,6 +720,22 @@ footer small { color: var(--muted); }
   const onScroll = () => nav.classList.toggle('scrolled', scrollY > 8);
   addEventListener('scroll', onScroll, { passive: true }); onScroll();
 
+  // Kommt man von außen mit #testen o. ä. herein, springt Safari ohne scroll-padding-top
+  // und der Abschnitt rutscht unter die Kopfzeile. Nach dem Laden einmal genau hinscrollen,
+  // außer man hat schon selbst gescrollt.
+  const target = location.hash.length > 1 && document.getElementById(decodeURIComponent(location.hash.slice(1)));
+  if (target) {
+    let moved = false;
+    ['wheel', 'touchmove', 'keydown'].forEach(t => addEventListener(t, () => { moved = true; }, { once: true, passive: true }));
+    const align = () => {
+      if (moved) return;
+      const pad = parseFloat(getComputedStyle(root).scrollPaddingTop) || 0;
+      scrollTo({ top: target.getBoundingClientRect().top + scrollY - pad, behavior: 'instant' });
+    };
+    requestAnimationFrame(align);
+    addEventListener('load', () => requestAnimationFrame(align), { once: true });
+  }
+
   // Einblenden beim Scrollen, das Regal füllt sich einmal.
   const show = el => el.classList.add(el.id === 'shelf' ? 'filled' : 'in');
   if ('IntersectionObserver' in window) {
