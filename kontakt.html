@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kontakt – bookery</title>
+<meta name="description" content="Fragen, Fehler oder Ideen zu bookery? Schreib uns über das Kontaktformular.">
+<meta name="theme-color" content="#E6F6E8" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#16241B" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="logo.png" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="stylesheet" href="style.css">
+<script src="legal.js" defer></script>
+<script src="kontakt.js" defer></script>
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a class="brand" href="./"><img class="app-icon" src="icons/sage.png" alt="" width="34" height="34">bookery</a>
+    <nav class="nav-links" aria-label="Seiten">
+      <a href="./#funktionen">Funktionen</a>
+      <a href="./#farben">Farben</a>
+      <a href="./#fragen">Fragen</a>
+      <a href="kontakt.html" aria-current="page">Kontakt</a>
+    </nav>
+    <a class="pill" href="./#testen">Testen</a>
+  </div>
+</header>
+
+<main>
+
+  <section class="page-head">
+    <div class="wrap">
+      <span class="eyebrow">Kontakt</span>
+      <h1>Schreib <em>uns.</em></h1>
+      <p class="lede">Eine Frage, ein Fehler oder eine Idee für bookery? Ein paar Zeilen genügen, wir melden uns per E-Mail.</p>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <div class="contact-layout">
+      <form class="contact-form" id="kontakt" action="/api/kontakt" method="post" novalidate>
+        <fieldset>
+          <legend>Worum geht es?</legend>
+          <div class="topics">
+            <label><input type="radio" name="thema" value="frage" checked><span>Frage</span></label>
+            <label><input type="radio" name="thema" value="fehler"><span>Fehler</span></label>
+            <label><input type="radio" name="thema" value="idee"><span>Idee</span></label>
+            <label><input type="radio" name="thema" value="sonstiges"><span>Sonstiges</span></label>
+          </div>
+        </fieldset>
+
+        <div class="f-row">
+          <div class="f-field">
+            <label class="f-label" for="k-name">Name <span class="opt">(optional)</span></label>
+            <input id="k-name" name="name" autocomplete="name" maxlength="80" placeholder="Wie dürfen wir dich nennen?">
+          </div>
+          <div class="f-field">
+            <label class="f-label" for="k-email">E-Mail-Adresse</label>
+            <input id="k-email" name="email" type="email" inputmode="email" autocomplete="email" autocapitalize="off" spellcheck="false"
+              required maxlength="254" placeholder="name@beispiel.de" aria-describedby="k-email-hint">
+            <p class="f-hint" id="k-email-hint"><span class="err"></span></p>
+          </div>
+        </div>
+
+        <div class="f-field">
+          <label class="f-label" for="k-text">Nachricht</label>
+          <textarea id="k-text" name="nachricht" required maxlength="4000" rows="7" aria-describedby="k-text-hint"
+            placeholder="Was möchtest du uns sagen?"></textarea>
+          <p class="f-hint" id="k-text-hint"><span class="err"></span><span class="count" aria-hidden="true"></span></p>
+        </div>
+
+        <input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+        <div class="f-foot">
+          <p id="k-note" aria-live="polite">Wir nutzen deine Angaben nur, um dir zu antworten. Mehr im <a href="datenschutz.html#kontakt">Datenschutz</a>.</p>
+          <button class="send" type="submit"><span>Nachricht senden</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        </div>
+
+        <div class="sent-box" id="k-sent" hidden tabindex="-1">
+          <span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg></span>
+          <h2>Danke, ist angekommen!</h2>
+          <p>Wir antworten an <b id="k-sent-to"></b>, so schnell wir können. Schau ruhig auch im Spam-Ordner nach.</p>
+          <button type="button" id="k-again">Noch eine Nachricht schreiben</button>
+        </div>
+      </form>
+
+      <aside class="contact-side">
+        <div class="card accent">
+          <h2>Lieber per E-Mail?</h2>
+          <a class="big" href="mailto:info@bookery-app.de">info@bookery-app.de</a>
+          <p>Geht genauso, zum Beispiel mit Bildschirmfotos im Anhang.</p>
+        </div>
+        <div class="card">
+          <h2>Du testest schon?</h2>
+          <p>Fehler meldest du am schnellsten direkt in bookery: auf der Startseite oben auf „Feedback“ tippen. Dann sind App-Version und Gerät gleich dabei.</p>
+        </div>
+        <div class="card">
+          <h2>Erst mal nachlesen</h2>
+          <p>Viele Fragen sind schon beantwortet: <a href="./#fragen">Häufige Fragen</a> · <a href="testen/">Anleitung für Tester</a></p>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <a class="brand" href="./" style="margin-right:0"><img class="app-icon" src="icons/sage.png" alt="" width="34" height="34">bookery</a>
+    <nav aria-label="Seiten">
+      <a href="testen/">Anleitung für Tester</a>
+      <a href="kontakt.html" aria-current="page">Kontakt</a>
+      <a href="datenschutz.html">Datenschutz</a>
+      <a href="impressum.html">Impressum</a>
+    </nav>
+    <small>Eine App von dustingotte · © 2026 Dustin Götte</small>
+  </div>
+</footer>
+
+</body>
+</html>
