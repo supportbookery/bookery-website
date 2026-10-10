@@ -20,7 +20,7 @@
     for (const k in pal) root.style.setProperty('--' + k, pal[k][i]);
     root.style.setProperty('--on-accent', dark.matches ? pal.paper[1] : pal.card[0]);
     document.querySelectorAll('meta[name="theme-color"]').forEach((m, n) => m.setAttribute('content', pal.paper[n]));
-    document.querySelectorAll('.app-icon').forEach(img => img.src = 'icons/' + current + '.png');
+    document.querySelectorAll('.app-icon').forEach(img => img.src = '/icons/' + current + '.png');
   }
   apply();
   dark.addEventListener('change', apply);

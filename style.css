@@ -223,3 +223,9 @@ footer small { color: var(--muted); }
   .f-field input, .f-field textarea { font-size: 16px; } /* sonst zoomt Safari auf dem iPhone hinein */
   .send { width: 100%; }
 }
+
+/* ---------- 404 (Caddy liefert die Seite über handle_errors aus; alle Pfade absolut) ---------- */
+.nf { display: grid; align-content: center; }
+.nf-book { width: 56px; height: 56px; color: var(--accent); opacity: .8; }
+.nf-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 24px; margin: 8px 0 0; }
+.nf-actions a:not(.pill) { font-weight: 500; }
